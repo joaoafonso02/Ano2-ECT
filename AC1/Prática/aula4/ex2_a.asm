@@ -8,11 +8,17 @@
 	.eqv SIZE, 20
 	.eqv print_int10, 1
 str:	.space SIZE
-
+	
+msg:	.asciiz "Introduce a string:"
 	.text
 	.globl main
 	
 main: 	
+	la $a0, msg
+	li $v0, read_string
+	syscall
+	
+	
 	la $a0, str 		# $a0=&str[0] (endereço da posição
 				#  0 do array, i.e., endereço
 				#  inicial do array)
