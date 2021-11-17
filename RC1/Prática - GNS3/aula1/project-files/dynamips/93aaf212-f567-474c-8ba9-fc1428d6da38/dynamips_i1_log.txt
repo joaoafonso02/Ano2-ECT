@@ -1,0 +1,24 @@
+Nov 17 19:46:10.184 HYPERVISOR: Release 0.2.17-amd64/Darwin (tag 2017072410)
+Nov 17 19:46:10.191 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 57647.
+Nov 17 19:46:10.195 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 17 19:46:10.195 HYPERVISOR: exec_cmd: hypervisor working_dir /Users/joaoafonso/GNS3/projects/test/project-files/dynamips 
+Nov 17 19:46:10.196 GENERAL: working_dir=/Users/joaoafonso/GNS3/projects/test/project-files/dynamips
+Nov 17 19:46:10.196 HYPERVISOR: exec_cmd: hypervisor working_dir /Users/joaoafonso/GNS3/projects/test/project-files/dynamips/93aaf212-f567-474c-8ba9-fc1428d6da38 
+Nov 17 19:46:10.196 GENERAL: working_dir=/Users/joaoafonso/GNS3/projects/test/project-files/dynamips/93aaf212-f567-474c-8ba9-fc1428d6da38
+Nov 17 19:46:10.197 HYPERVISOR: exec_cmd: vm create R1 1 c3725 
+Nov 17 19:46:10.197 VM: VM R1 created.
+Nov 17 19:46:10.198 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5002 
+Nov 17 19:46:10.198 HYPERVISOR: exec_cmd: c3725 get_mac_addr R1 
+Nov 17 19:46:10.199 HYPERVISOR: exec_cmd: vm set_disk0 R1 0 
+Nov 17 19:46:10.199 HYPERVISOR: exec_cmd: vm get_status R1 
+Nov 17 19:46:10.200 HYPERVISOR: exec_cmd: vm set_idle_pc R1 0x60c086a8 
+Nov 17 19:46:10.201 HYPERVISOR: exec_cmd: vm set_ios R1 /Users/joaoafonso/GNS3/images/IOS/c3725-adventerprisek9-mz.124-15.T14.image 
+Nov 17 19:46:10.202 HYPERVISOR: exec_cmd: c3725 set_mac_addr R1 c201.1720.0000 
+Nov 17 19:46:10.202 HYPERVISOR: exec_cmd: vm set_nvram R1 256 
+Nov 17 19:46:10.203 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5002 
+Nov 17 19:46:10.249 HYPERVISOR: exec_cmd: nio create_udp udp-b17ea00b-5158-4dc7-97f4-cb7bff73c9b1 10002 127.0.0.1 10003 
+Nov 17 19:46:10.483 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 0 0 udp-b17ea00b-5158-4dc7-97f4-cb7bff73c9b1 
+Nov 17 19:46:10.484 HYPERVISOR: exec_cmd: vm get_status R1 
+Nov 17 19:46:10.532 HYPERVISOR: exec_cmd: nio create_udp udp-421cef75-75cb-4173-bcf1-3b15281cdf4d 10006 127.0.0.1 10007 
+Nov 17 19:46:10.535 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 0 1 udp-421cef75-75cb-4173-bcf1-3b15281cdf4d 
+Nov 17 19:46:10.536 HYPERVISOR: exec_cmd: vm get_status R1 
