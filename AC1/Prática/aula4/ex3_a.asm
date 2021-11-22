@@ -27,9 +27,7 @@ main:
  	
  	li $v0, read_int
  	syscall
- 	move $t5, $v0			# value = read_int();
-	
-	move $t4, $t5
+ 	move $t4, $v0			# value = read_int();
 	
 	sub $t4, $t4, 1			# SIZE - 1 = 3
 	sll $t4, $t4, 2			# 0011 --> 1100
