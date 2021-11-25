@@ -3,49 +3,44 @@
 # lista + SIZE: $t2
 
 	.data
-	
-str:	.asciiz "\nConteudo do array:\n"
-
-str1:	.asciiz "; "
-
-lista:	.word 8, -4, 3, 5, 124, -15, 87, 9, 27, 15
-	
+	.eqv SIZE, 10
 	.eqv print_string, 4
 	.eqv print_int10, 1
-	.eqv SIZE, 10
 	
+lista:	.word 8, -4, 3, 5, 124, -15, 87, 9, 27, 15
+
+str1: 	.asciiz "\nConteudo do array:\n"
+
+str2:	.asciiz "; "
+
 	.text
 	.globl main
 	
 main:
-	la $a0, str
-	li $v0, print_string
-	syscall 			# print_string("\nConteudo do array:\n"); 
+	la $t0, lista		# p = lista
 	
-
-	la $t0, lista			# p = lista
-	
-	li $t2, SIZE
+	li $t2, SIZE		# $t2 = size
 	sll $t2, $t2, 2
-	addu $t2, $t0, $t2		# $t2 = lista + SIZE
+	addu $t2, $t2, $t0	# $t2 = lista + size
 	
-while:
-	bge $t0, $t2, endw		# while(p < lista + SIZE)
+for:
+	bge $t0, $t2, endw	# while( p < lista + SIZE)
 	
-	lw $t1, 0($t0)			# $t1 = *p;
+	lw $t1, 0($t0)		# *p
 	
 	move $a0, $t1
-	li $v0, print_int10
-	syscall				# print_int10( *p );
+	li $v0, print_int10	
+	syscall 		# print_int10( *p ); 
 	
-	la $a0, str1
+	la $a0, str2
 	li $v0, print_string
-	syscall				# print_string("; "); 
+	syscall			# print_string("; ");
 	
-	addiu $t0, $t0, 4		#p++;
+	addi $t0, $t0, 4	#p++
+	j for
 	
-	j while
-
 endw:
 	jr $ra
-	
+
+
+
