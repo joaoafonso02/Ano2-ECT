@@ -1,70 +1,60 @@
-# Mapa de registos
 # i: $t0
-# v: $t1
-# &(val[0]): $t2
-# ++i: $t3
-# SIZE / 2: $t4
-# val + i: $t5
+# val: $t1
+# &(val[0]): $t3
 
-	.data 
+	.data
 	.eqv SIZE, 8
-	.eqv print_string, 4
-	.eqv print_int10, 1 
+	.eqv print_int10, 1
 	.eqv print_char, 11
+	.eqv print_string, 4
 	
-val:	.word 8, 4, 15, -1987, 327, -9, 27, 16
-	.space SIZE
-	
-str1:	.asciiz "Result is: "
-	
+val:	.word 8,4,15,-1987,327,-9,27,16
+str1:	.asciiz "\nResult is: "
+
 	.text
 	.globl main
 	
-main:						
-	li $t0, 0				# i = 0;
-	la $t2, val				# &val[0] = $t2
+main:
+	li $t0, 0		# i = 0
+	la $t3, val		# $t3 = &(val[0])
 	
-do:						# do { 
-	sll $t5, $t0, 2				# val + i = i * 4(4 bytes/word)				   
-	addu $a0, $t5, $t0	
-	lw $t1, 0($a0)				# v = val[i];
+do:
+	sll $t4, $t0, 2		# i * 4
+	addu $t2, $t4, $t3	# &(val[i])
 	
-	li $a1,SIZE                  
-   	addi $a1,$a0,16                		# $a1 = &val+i + SIZE/2  (SIZE/2 == (8/2=4)*4=16)
-	sw $a2,0($a1)                		# $a2 = *$a1
+	lw $t4, 0($t2)		# $t4 = val[i]
+	lw $t5, 16($t2)		# $t5 = val[i + SIZE/2]
 	
-	sw $t6, 0($a2)				# val[i] = val[i+SIZE/2];
-	sw $t1, 0($t6)
+	sw $t4, 16($t2)		# val[i] = val[i + SIZE/2]
+	sw $t5, 0($t2)		# val[i + SIZE/2] = val[i]
 	
 while:
-	li $t4, SIZE				# $t4 = SIZE
-	div $t4, $t4, 2				# SIZE /= 2
-	
-	addi $t3, $t0, 1			# ++i
-	bge $t3, $t4, endw			# while(++i < (SIZE/2))
-	
+	addi $t0, $t0, 1	# ++i
+	bge $t0, 4, result	# while(++i < SIZE / 2)
 	j do
 	
-endw:
+result:
 	la $a0, str1
 	li $v0, print_string
-	syscall					# print_string("Result is: ");
-	li $t0,0				# i= 0;
+	syscall			# print_string("Result is: ")
 	
+	li $t0, 0		# i = 0
 do2:
-	sw $a0, 4($t0)				# $a0 = val[i++]
+	addu $a0, $t3, $t0
+	
+	lw $a0, 0($a0)
 	li $v0, print_int10
-	syscall					# print_int10(val[i++]);
+	syscall			# print_int10(val[i]);
+	
+	addi $t0,$t0,4		# i++;
 	
 	li $a0, ','
-	li $v0, print_char
-	syscall					# print_char(',');
+	li $v0, print_char	# print_char(',');
+	syscall
 	
-while2:
-	li $a0,SIZE
-    	sll $a0,$a0,4
-	bge $t0, $a0, end
-	j do2
+	li $a0, SIZE
+	sll $a0, $a0, 2
 	
-end:	
+	blt $t0, $a0, do2	# } while( i < SIZE);
+		
 	jr $ra
