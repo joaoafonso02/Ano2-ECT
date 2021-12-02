@@ -35,7 +35,7 @@ reading:
 	
 	la $t1, array		# $t1 = array
 	sll $t2, $t0, 2		# i * 4
-	addu $t3, $t2, $t1	# array + SIZE
+	addu $t3, $t2, $t1	# array + i
 	
 	sw $v0, 0($t3)		# array[i] = read_int
 	
