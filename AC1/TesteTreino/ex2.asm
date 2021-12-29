@@ -52,7 +52,6 @@ do2:
 	syscall
 	
 	addi $t0, $t0, 1	# i++
-	
 	li $a0, ','
 	li $v0, print_char
 	syscall
