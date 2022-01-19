@@ -1,7 +1,8 @@
 	.data
 	.eqv SIZE, 10
 a:	.space 80
-		
+str1:	.asciiz "\nIntroduza um número: "
+str2:	.asciiz "\nValor maximo: "		
 	.text
 	.globl main
 
@@ -16,6 +17,10 @@ for:
 	sll 	$t2, $t0, 3
 	addu	$t3, $t2, $t1
 	
+	la 	$a0, str1
+	li 	$v0, 4
+	syscall
+	 
 	li 	$v0, 5
 	syscall
 	
@@ -28,7 +33,11 @@ for:
 endfor:
 	la 	$a0, a
 	li 	$a1, SIZE
-	jal 	average
+	jal 	max
+	
+	la 	$a0, str2
+	li 	$v0, 4
+	syscall
 	
 	mov.d 	$f12, $f0
 	li 	$v0, 3
