@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="p5.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+  	<h1>Redes de Comunicações I</h1>
+    
+    <h2>Made by: Eduardo Fernandes, João Afonso, João Ferreira</h2>
+    <button 
+            style="position:fixed;bottom:250px;left:10px;width:50px;height:30px;" 
+            onclick="remove10Box()"
+    >-10</button>
+    <button 
+            style="position:fixed;bottom:250px;left:70px;width:30px;height:30px;" 
+            onclick="removeBox()"
+    >-1</button>
+    <button 
+            style="position:fixed;bottom:250px;left:110px;width:30px;height:30px;" 
+            onclick="addBox()"
+    >+1</button>
+    <button 
+            style="position:fixed;bottom:250px;left:150px;width:50px;height:30px;" 
+            onclick="add10Box()"
+    >+10</button>
+    <a style="position:fixed;bottom:220px;left:15px;color:#700;font-size:20px;"><b>Size:</b></a>
+    <input
+           id="inpSize"
+           onchange="updateInpSize()"
+           type="number"
+           min="10"
+           size="3"
+           value="50"
+           style="position:fixed;bottom:220px;left:70px;width:50px;font-size:18px;color:#700;background:rgba(0,0,0,0);border:2px solid #700;"
+    />
+    <a style="position:fixed;bottom:190px;left:15px;color:#700;font-size:20px;"><b>Rand:</b></a>
+    <input
+           id="inpRand"
+           onchange="updateInpRand()"
+           type="number"
+           min="10"
+           size="3"
+           value="50"
+           style="position:fixed;bottom:190px;left:70px;width:50px;font-size:18px;color:#700;background:rgba(0,0,0,0);border:2px solid #700;"
+    />
+    <script src="sketch.js"></script>
+  </body>
+</html>
