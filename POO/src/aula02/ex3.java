@@ -1,3 +1,4 @@
+package Aula02;
 import java.util.Scanner;
 
 public class ex3 {
