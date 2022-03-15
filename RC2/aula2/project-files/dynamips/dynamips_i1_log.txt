@@ -1,0 +1,113 @@
+Mar 15 22:18:13.025 HYPERVISOR: Release 0.2.17-amd64/Darwin (tag 2017072410)
+Mar 15 22:18:13.028 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 62044.
+Mar 15 22:18:13.031 HYPERVISOR: exec_cmd: hypervisor version 
+Mar 15 22:18:13.032 HYPERVISOR: exec_cmd: hypervisor working_dir /Users/joaoafonso/Desktop/UA/Ano2-ECT/RC2/aula2/project-files/dynamips 
+Mar 15 22:18:13.032 GENERAL: working_dir=/Users/joaoafonso/Desktop/UA/Ano2-ECT/RC2/aula2/project-files/dynamips
+Mar 15 22:18:13.033 HYPERVISOR: exec_cmd: hypervisor working_dir /Users/joaoafonso/Desktop/UA/Ano2-ECT/RC2/aula2/project-files/dynamips/e39646c9-5874-4018-bb15-480ef29b3150 
+Mar 15 22:18:13.033 GENERAL: working_dir=/Users/joaoafonso/Desktop/UA/Ano2-ECT/RC2/aula2/project-files/dynamips/e39646c9-5874-4018-bb15-480ef29b3150
+Mar 15 22:18:13.033 HYPERVISOR: exec_cmd: vm create ESW1 1 c3725 
+Mar 15 22:18:13.034 VM: VM ESW1 created.
+Mar 15 22:18:13.035 HYPERVISOR: exec_cmd: vm set_con_tcp_port ESW1 5001 
+Mar 15 22:18:13.035 HYPERVISOR: exec_cmd: c3725 get_mac_addr ESW1 
+Mar 15 22:18:13.037 HYPERVISOR: exec_cmd: vm set_ios ESW1 /Users/joaoafonso/GNS3/images/IOS/c3725-adventerprisek9-mz.124-15.T14.image 
+Mar 15 22:18:13.037 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:18:13.037 HYPERVISOR: exec_cmd: vm set_idle_pc ESW1 0x60c09aa0 
+Mar 15 22:18:13.038 HYPERVISOR: exec_cmd: vm set_nvram ESW1 256 
+Mar 15 22:18:13.038 HYPERVISOR: exec_cmd: vm set_disk0 ESW1 1 
+Mar 15 22:18:13.039 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:18:13.040 HYPERVISOR: exec_cmd: vm slot_add_binding ESW1 1 0 NM-16ESW 
+Mar 15 22:18:13.122 HYPERVISOR: exec_cmd: vm set_ios ESW1 /Users/joaoafonso/GNS3/images/IOS/c3725-adventerprisek9-mz.124-15.T14.image 
+Mar 15 22:18:33.040 HYPERVISOR: exec_cmd: vm set_ios ESW1 /Users/joaoafonso/GNS3/images/IOS/c3725-adventerprisek9-mz.124-15.T14.image 
+Mar 15 22:18:59.160 HYPERVISOR: exec_cmd: nio create_udp udp-d7665999-a4fc-4a88-803b-e02918d9b389 10002 127.0.0.1 10003 
+Mar 15 22:18:59.402 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW1 0 1 udp-d7665999-a4fc-4a88-803b-e02918d9b389 
+Mar 15 22:18:59.404 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:19:04.777 HYPERVISOR: exec_cmd: nio create_udp udp-1dcb40ce-deff-4467-97ed-294aba8c9736 10006 127.0.0.1 10007 
+Mar 15 22:19:04.780 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW1 1 0 udp-1dcb40ce-deff-4467-97ed-294aba8c9736 
+Mar 15 22:19:04.781 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:19:08.331 HYPERVISOR: exec_cmd: nio create_udp udp-7a48d7dd-97b3-4207-aad1-aaa3bbfca442 10010 127.0.0.1 10011 
+Mar 15 22:19:08.333 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW1 1 1 udp-7a48d7dd-97b3-4207-aad1-aaa3bbfca442 
+Mar 15 22:19:08.333 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:20:24.088 HYPERVISOR: exec_cmd: vm create Ghost 0 c3725 
+Mar 15 22:20:24.089 VM: VM Ghost created.
+Mar 15 22:20:24.111 HYPERVISOR: exec_cmd: vm set_ios Ghost /Users/joaoafonso/GNS3/images/IOS/c3725-adventerprisek9-mz.124-15.T14.image 
+Mar 15 22:20:24.114 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Mar 15 22:20:24.114 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost /Users/joaoafonso/Desktop/UA/Ano2-ECT/RC2/aula2/project-files/dynamips/c3725-adventerprisek9-mz.124-15.T14.image-128.ghost 
+Mar 15 22:20:24.115 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Mar 15 22:20:24.116 HYPERVISOR: exec_cmd: vm set_config Ghost configs/i0_startup-config.cfg 
+Mar 15 22:20:24.116 HYPERVISOR: exec_cmd: vm start Ghost 
+Mar 15 22:20:24.546 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Mar 15 22:20:24.550 HYPERVISOR: exec_cmd: vm stop Ghost 
+Mar 15 22:20:24.838 VM: VM Ghost shutdown.
+Mar 15 22:20:24.839 HYPERVISOR: exec_cmd: vm extract_config Ghost 
+Mar 15 22:20:24.842 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Mar 15 22:20:24.842 VM: VM Ghost destroyed.
+Mar 15 22:20:24.847 HYPERVISOR: exec_cmd: vm set_ghost_status ESW1 2 
+Mar 15 22:20:24.847 HYPERVISOR: exec_cmd: vm set_ghost_file ESW1 /Users/joaoafonso/Desktop/UA/Ano2-ECT/RC2/aula2/project-files/dynamips/c3725-adventerprisek9-mz.124-15.T14.image-128.ghost 
+Mar 15 22:20:24.848 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:20:24.849 HYPERVISOR: exec_cmd: vm set_config ESW1 configs/i1_startup-config.cfg 
+Mar 15 22:20:24.849 HYPERVISOR: exec_cmd: vm start ESW1 
+Mar 15 22:20:55.076 HYPERVISOR: exec_cmd: vm extract_config ESW1 
+Mar 15 22:20:55.080 HYPERVISOR: exec_cmd: vm extract_config ESW1 
+Mar 15 22:21:55.076 HYPERVISOR: exec_cmd: vm extract_config ESW1 
+Mar 15 22:21:55.078 HYPERVISOR: exec_cmd: vm extract_config ESW1 
+Mar 15 22:22:25.076 HYPERVISOR: exec_cmd: vm extract_config ESW1 
+Mar 15 22:22:25.080 HYPERVISOR: exec_cmd: vm extract_config ESW1 
+Mar 15 22:23:55.076 HYPERVISOR: exec_cmd: vm extract_config ESW1 
+Mar 15 22:23:55.080 HYPERVISOR: exec_cmd: vm extract_config ESW1 
+Mar 15 22:34:34.699 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:34:34.701 HYPERVISOR: exec_cmd: vm slot_disable_nio ESW1 0 1 
+Mar 15 22:34:34.718 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding ESW1 0 1 
+Mar 15 22:34:34.720 HYPERVISOR: exec_cmd: nio delete udp-d7665999-a4fc-4a88-803b-e02918d9b389 
+Mar 15 22:34:38.527 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:34:38.528 HYPERVISOR: exec_cmd: vm slot_disable_nio ESW1 1 0 
+Mar 15 22:34:38.549 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding ESW1 1 0 
+Mar 15 22:34:38.551 HYPERVISOR: exec_cmd: nio delete udp-1dcb40ce-deff-4467-97ed-294aba8c9736 
+Mar 15 22:34:55.165 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:34:55.166 HYPERVISOR: exec_cmd: vm slot_disable_nio ESW1 1 1 
+Mar 15 22:34:55.191 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding ESW1 1 1 
+Mar 15 22:34:55.192 HYPERVISOR: exec_cmd: nio delete udp-7a48d7dd-97b3-4207-aad1-aaa3bbfca442 
+Mar 15 22:35:04.403 HYPERVISOR: exec_cmd: nio create_udp udp-38fbb0fc-99ca-48ec-a237-a0dad7e29579 10002 127.0.0.1 10003 
+Mar 15 22:35:04.405 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW1 1 5 udp-38fbb0fc-99ca-48ec-a237-a0dad7e29579 
+Mar 15 22:35:04.406 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:35:04.406 HYPERVISOR: exec_cmd: vm slot_enable_nio ESW1 1 5 
+Mar 15 22:35:08.673 HYPERVISOR: exec_cmd: nio create_udp udp-0046d9d0-0c2c-4ea5-9176-72ebb9222aaf 10006 127.0.0.1 10007 
+Mar 15 22:35:08.675 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW1 1 6 udp-0046d9d0-0c2c-4ea5-9176-72ebb9222aaf 
+Mar 15 22:35:08.675 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:35:08.676 HYPERVISOR: exec_cmd: vm slot_enable_nio ESW1 1 6 
+Mar 15 22:35:12.384 HYPERVISOR: exec_cmd: nio create_udp udp-6fcc316d-cfaf-4020-9c19-b61423b998dc 10010 127.0.0.1 10011 
+Mar 15 22:35:12.386 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW1 0 1 udp-6fcc316d-cfaf-4020-9c19-b61423b998dc 
+Mar 15 22:35:12.386 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:35:12.386 HYPERVISOR: exec_cmd: vm slot_enable_nio ESW1 0 1 
+Mar 15 22:36:51.616 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:36:51.619 HYPERVISOR: exec_cmd: vm stop ESW1 
+Mar 15 22:36:51.740 VM: VM ESW1 shutdown.
+Mar 15 22:36:51.742 HYPERVISOR: exec_cmd: vm extract_config ESW1 
+Mar 15 22:36:53.981 HYPERVISOR: exec_cmd: vm set_ghost_status ESW1 2 
+Mar 15 22:36:53.997 HYPERVISOR: exec_cmd: vm set_ghost_file ESW1 /Users/joaoafonso/Desktop/UA/Ano2-ECT/RC2/aula2/project-files/dynamips/c3725-adventerprisek9-mz.124-15.T14.image-128.ghost 
+Mar 15 22:36:53.998 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:36:54.005 HYPERVISOR: exec_cmd: vm set_config ESW1 configs/i1_startup-config.cfg 
+Mar 15 22:36:54.017 HYPERVISOR: exec_cmd: vm start ESW1 
+Mar 15 22:36:58.853 HYPERVISOR: exec_cmd: vm set_ghost_status ESW1 2 
+Mar 15 22:36:58.854 HYPERVISOR: exec_cmd: vm set_ghost_file ESW1 /Users/joaoafonso/Desktop/UA/Ano2-ECT/RC2/aula2/project-files/dynamips/c3725-adventerprisek9-mz.124-15.T14.image-128.ghost 
+Mar 15 22:36:58.855 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:37:24.264 HYPERVISOR: exec_cmd: vm extract_config ESW1 
+Mar 15 22:37:24.267 HYPERVISOR: exec_cmd: vm extract_config ESW1 
+Mar 15 22:38:19.098 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:38:19.099 HYPERVISOR: exec_cmd: vm slot_disable_nio ESW1 0 1 
+Mar 15 22:38:19.122 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding ESW1 0 1 
+Mar 15 22:38:19.124 HYPERVISOR: exec_cmd: nio delete udp-6fcc316d-cfaf-4020-9c19-b61423b998dc 
+Mar 15 22:38:24.216 HYPERVISOR: exec_cmd: nio create_udp udp-ce79685c-d97e-4547-8d1b-f8b2859ce2c6 10010 127.0.0.1 10011 
+Mar 15 22:38:24.218 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW1 1 0 udp-ce79685c-d97e-4547-8d1b-f8b2859ce2c6 
+Mar 15 22:38:24.218 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:38:24.219 HYPERVISOR: exec_cmd: vm slot_enable_nio ESW1 1 0 
+Mar 15 22:38:39.667 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:38:39.671 HYPERVISOR: exec_cmd: vm stop ESW1 
+Mar 15 22:38:39.806 VM: VM ESW1 shutdown.
+Mar 15 22:38:39.807 HYPERVISOR: exec_cmd: vm extract_config ESW1 
+Mar 15 22:38:41.557 HYPERVISOR: exec_cmd: vm set_ghost_status ESW1 2 
+Mar 15 22:38:41.559 HYPERVISOR: exec_cmd: vm set_ghost_file ESW1 /Users/joaoafonso/Desktop/UA/Ano2-ECT/RC2/aula2/project-files/dynamips/c3725-adventerprisek9-mz.124-15.T14.image-128.ghost 
+Mar 15 22:38:41.560 HYPERVISOR: exec_cmd: vm get_status ESW1 
+Mar 15 22:38:41.581 HYPERVISOR: exec_cmd: vm set_config ESW1 configs/i1_startup-config.cfg 
+Mar 15 22:38:41.582 HYPERVISOR: exec_cmd: vm start ESW1 
+Mar 15 22:39:11.807 HYPERVISOR: exec_cmd: vm extract_config ESW1 
+Mar 15 22:39:11.811 HYPERVISOR: exec_cmd: vm extract_config ESW1 

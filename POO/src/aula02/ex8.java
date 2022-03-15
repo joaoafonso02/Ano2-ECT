@@ -19,6 +19,7 @@ public class ex8 {
      double h = Math.sqrt(c1*c1 + c2*c2);
      double area = (c1*c2) / 2;
      double angle = Math.acos(c1/h)*180/Math.PI;
+     
      System.out.println("Hypotenuse: " + h);
      System.out.println("Area: " + area);
      System.out.println("Angle(º): " + angle);

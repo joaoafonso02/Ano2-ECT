@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <title>SKRT</title>
+    <head>
+        <link rel="icon" href="ua.jpg">
+
+        <style>
+            ul { list-style-type: none; margin: 0; padding: 0; overflow:hidden;background-color: #333;}
+            li {float:left; border-right: 1px solid #bbb;}
+            li:last-child { border-right: none; float:right;}
+            li a {display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;}
+            li a:hover:not {background-color: #444; }
+            .active { background-color: #00FF95; }
+            .banner {height:600px; margin:auto;
+                background-image: url('ua.jpg');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size:cover;
+            }
+            .myDiv {
+                border: 3px outset #00FF95;
+                background-color: lightblue;
+                text-align: center;
+            }
+
+            .header {
+                background-color: white;
+                padding: 20px;
+                text-align: center
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                margin:0;
+            }
+            .topnav {
+                overflow:hidden;
+                background-color: #333;
+            }
+            .topnav a {
+                float:left;
+                display: block;
+                color:beige;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            .topnav a:hover {
+                background-color: #00FF95;
+                color:black
+            }
+            .column {
+                float:left;
+                width:33.33%;
+                padding:15px;
+            }
+            @media screen and (max-width: 600px) {
+                .column{
+                    width:100%;
+                }
+                
+            }
+            .footer {
+                background-color: white;
+                padding: 10px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="topnav">
+            <a href="#">Home</a>
+            <a href="#">Contacts</a>
+            <a href="#">About</a>
+        </div>
+        <!--
+        <ul>
+            <li><a href="home.html" class="active">Home</a></a></li>
+            <li><a href="news.html">News</a></a></li>
+            <li><a href="contacts.html">Contacts</a></a></li>
+            <li><a href="about.html">About</a></a></li>
+        </ul>
+        -->
+    
+        <div class="header">
+            <h1>My Goddamnn Website</h1>
+        </div>
+
+        <div class="myDiv banner" >
+            <p></p>
+            <a>THIS IS MY PRETTY UA</a> 
+            <p></p>
+            <a>(nem parece que n curto de ti)</a>
+        </div>
+
+        <div class="column">
+            <h2>Skrt</h2>
+           
+        </div>
+        <div class="column">
+            <h2>Gang Gang</h2>
+            
+        </div>
+        <div class="column">
+            <h2>Saucin'</h2>
+            
+        </div>
+        
+        <hr />
+        <div class="footer">
+            <p style ="text-align: center;"><i class="fa fa-copyright"></i>©
+                 Copyright  -  UA</i></p>
+        </div>
+      
+    </body>
+
+</html>
