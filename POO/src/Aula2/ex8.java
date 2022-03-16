@@ -1,4 +1,4 @@
-package Aula02;
+package Aula2;
 import java.util.Scanner;
 public class ex8 {
     public static void main(String[] args) {
