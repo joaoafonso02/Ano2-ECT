@@ -10,10 +10,8 @@ public class ex1 {
         // Exceptions 
         do{
             try {
-                System.out.print("\nDistance in Km: ");
-                km = sc.nextDouble();        // read double value from keyboard
-                if(km > 0) break;
-                System.out.println(RED + "THERE ARE NO NEGATIVE DISTANCES!" + NORMAL); 
+                km = support.getDouble(sc, "\nDistance in Km: ");        // read double value from keyboard
+                break;
             } catch (Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);
