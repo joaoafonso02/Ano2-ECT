@@ -11,7 +11,8 @@ public class ex3 {
             try{
                 System.out.print("\nWater quantity: ");
                 M = sc.nextDouble();
-                break;
+                if(M > 0) break;
+                System.out.println(RED + "THERE ARE NO NEGATIVE WATER QUANTITIES!" + NORMAL); 
             } catch(Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);
@@ -21,7 +22,8 @@ public class ex3 {
             try{
                 System.out.print("Inicial water temperature: ");
                 iw = sc.nextDouble();
-                break;
+                if(iw > -272.15 && iw < 272.15) break;
+                System.out.println(RED + "NON EXISTING TEMPERATURE!" + NORMAL); 
             } catch(Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);
@@ -32,7 +34,8 @@ public class ex3 {
             try{
                 System.out.print("Final water temperature: ");
                 fw = sc.nextDouble();
-                break;
+                if(fw > -272.15 && fw < 272.15) break;
+                System.out.println(RED + "NON EXISTING TEMPERATURE!" + NORMAL); 
             } catch(Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);

@@ -11,7 +11,8 @@ public class ex2 {
             try {
                 System.out.print("Temperature in Celcius: ");
                 Celcius = sc.nextDouble();  // write value from keyboard
-                break;
+                if(Celcius > -272.15 && Celcius < 272.15) break;
+                System.out.println(RED + "NON EXISTING TEMPERATURE!" + NORMAL); 
             } catch (Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);

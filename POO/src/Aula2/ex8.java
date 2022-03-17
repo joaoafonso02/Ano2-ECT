@@ -19,7 +19,8 @@ public class ex8 {
             try {
                 System.out.print("\nValue of 1 side: ");
                 c1 = sc.nextDouble();
-                break;
+                if(c1 > 0) break;
+                System.out.println(RED + "THERE ARE NO NEGATIVE DISTANCES!" + NORMAL);  
             } catch (Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);
@@ -30,7 +31,8 @@ public class ex8 {
             try {
                 System.out.print("Value of the other: ");
                 c2 = sc.nextDouble();
-                break;
+                if(c2 > 0) break;
+                System.out.println(RED + "THERE ARE NO NEGATIVE DISTANCES!" + NORMAL); 
             } catch (Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);

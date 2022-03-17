@@ -12,7 +12,8 @@ public class ex1 {
             try {
                 System.out.print("\nDistance in Km: ");
                 km = sc.nextDouble();        // read double value from keyboard
-                break;
+                if(km > 0) break;
+                System.out.println(RED + "THERE ARE NO NEGATIVE DISTANCES!" + NORMAL); 
             } catch (Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);

@@ -11,7 +11,8 @@ public class ex4 {
             try {
                 System.out.print("\nInvested amount: ");
                 amount = sc.nextDouble();
-                break;
+                if(amount > 0) break;
+                System.out.println(RED + "THERE ARE NO NEGATIVE AMOUNTS!" + NORMAL); 
             } catch (Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);
@@ -22,7 +23,8 @@ public class ex4 {
             try {
                 System.out.print("Monthly Tax: ");
                 tax = sc.nextDouble();
-                break;
+                if(tax > 0) break;
+                System.out.println(RED + "THERE ARE NO NEGATIVE TAXES!" + NORMAL); 
             } catch (Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);

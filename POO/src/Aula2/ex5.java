@@ -12,7 +12,8 @@ public class ex5 {
             try {
                 System.out.print("\nv1(km/h): ");
                 v1 = sc.nextDouble();
-                break;
+                if(v1 > 0) break;
+                System.out.println(RED + "THERE ARE NO NEGATIVE VELOCITIES!" + NORMAL); 
             } catch (Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);
@@ -23,7 +24,8 @@ public class ex5 {
             try {
                 System.out.print("d1(km): ");
                 d1 = sc.nextDouble();
-                break;
+                if(d1 > 0) break;
+                System.out.println(RED + "THERE ARE NO NEGATIVE DISTANCES!" + NORMAL); 
             } catch (Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);
@@ -34,7 +36,8 @@ public class ex5 {
             try {
                 System.out.print("v2(km/h): ");
                 v2 = sc.nextDouble();
-                break;
+                if(v2 > 0) break;
+                System.out.println(RED + "THERE ARE NO NEGATIVE VELOCITIES!" + NORMAL); 
             } catch (Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);
@@ -45,7 +48,8 @@ public class ex5 {
             try {
                 System.out.print("d2(km): ");
                 d2 = sc.nextDouble();
-                break;
+                if(d2 > 0) break;
+                System.out.println(RED + "THERE ARE NO NEGATIVE DISTANCES!" + NORMAL); 
             } catch (Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);

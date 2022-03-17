@@ -10,7 +10,8 @@ public class ex6 {
             try {
                 System.out.print("\nSeconds: ");
                 s = sc.nextInt();
-                break;
+                if(s > 0) break;
+                System.out.println(RED + "THERE ARE NO NEGATIVE SECONDS!" + NORMAL); 
             } catch (Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);
