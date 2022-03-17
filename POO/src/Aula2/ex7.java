@@ -11,8 +11,7 @@ public class ex7 {
             try {
                 System.out.print("x1: ");
                 x1 = sc.nextDouble();
-                if(x1 > 0) break;
-                System.out.println(RED + "THERE ARE NO NEGATIVE DISTANCES!" + NORMAL); 
+                break;
             } catch (Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);
@@ -23,8 +22,7 @@ public class ex7 {
             try {
                 System.out.print("y1: ");
                 y1 = sc.nextDouble();
-                if(y1 > 0) break;
-                System.out.println(RED + "THERE ARE NO NEGATIVE DISTANCES!" + NORMAL); 
+                break;
             } catch (Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);
@@ -38,8 +36,7 @@ public class ex7 {
             try {
                 System.out.print("x2: ");
                 x2 = sc.nextDouble();
-                if(x2 > 0) break;
-                System.out.println(RED + "THERE ARE NO NEGATIVE DISTANCES!" + NORMAL); 
+                break;
             } catch (Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);
@@ -50,8 +47,7 @@ public class ex7 {
             try {
                 System.out.print("y2: ");
                 y2 = sc.nextDouble();
-                if(y2 > 0) break;
-                System.out.println(RED + "THERE ARE NO NEGATIVE DISTANCES!" + NORMAL); 
+                break;
             } catch (Exception e) {
                 sc.nextLine();
                 System.out.println(RED + "NOT A NUMBER!" + NORMAL);
