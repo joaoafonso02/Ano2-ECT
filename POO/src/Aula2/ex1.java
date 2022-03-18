@@ -10,7 +10,7 @@ public class ex1 {
         // Exceptions 
         do{
             try {
-                km = support.getDouble(sc, "\nDistance in Km: ");        // read double value from keyboard
+                km = support.getPositiveDouble(sc, "\nDistance in Km: ");        // read double value from keyboard
                 break;
             } catch (Exception e) {
                 sc.nextLine();

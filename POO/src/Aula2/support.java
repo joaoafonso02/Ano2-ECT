@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class support {
     public static final String NORMAL = "\033[0m"; final static String RED = "\033[0;31m"; 
     
-    public static Double getDouble(Scanner sc, String text) { 
+    public static Double getPositiveDouble(Scanner sc, String text) { 
         double d=0.0;
         do {
             System.out.print(text);
