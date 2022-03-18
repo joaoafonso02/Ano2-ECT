@@ -8,7 +8,7 @@ public class ex6 {
     
         do{
             try {
-                s = support.getInt(sc,"\nSeconds: ");
+                s = support.getIntSecs(sc,"\nSeconds: ");
                 break;
             } catch (Exception e) {
                 sc.nextLine();
