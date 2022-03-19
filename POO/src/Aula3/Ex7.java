@@ -8,7 +8,7 @@ public class Ex7 {
         // Terminal Colors Output
         final String NORMAL = "\033[0m"; final String RED = "\033[0;31m"; 
         final String BLUE = "\u001B[34m"; final String GREEN = "\u001B[32m";
-        final String YELLOW = "\u001B[33m";final String WHITE = "\u001B[37m";
+        final String YELLOW = "\u001B[33m";
         // Introduction
         System.out.println("\n-------------- Higher Lower Game --------------");
         // Variables
