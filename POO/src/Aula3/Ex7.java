@@ -48,7 +48,7 @@ public class Ex7 {
             } else break;
             count = 0;
         }
-
+        // Game Over!
         System.out.println(RED + "\nGAME OVER! SEE YOU NEXT TIME!\n" + NORMAL);
         sc.close();
     }
