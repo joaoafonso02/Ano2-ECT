@@ -5,13 +5,15 @@ public class Ex6 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in); 
         final String NORMAL = "\033[0m"; final String RED = "\033[0;31m"; final String BLUE = "\u001B[34m"; 
+        
         String date;
         String[] dateSplit;
         int month, year, number_of_days = 31;
+
         do{
             System.out.println("\nDate(MM:YYYY): ");
             date = sc.nextLine();
-            dateSplit = date.split(":");
+            dateSplit = date.split("[:,\\s-]");
             month = Integer.parseInt(dateSplit[0]);
             year = Integer.parseInt(dateSplit[1]);
             if(month < 0 || month > 12) {
