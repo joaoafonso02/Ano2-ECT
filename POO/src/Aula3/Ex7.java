@@ -9,8 +9,6 @@ public class Ex7 {
         final String NORMAL = "\033[0m"; final String RED = "\033[0;31m"; 
         final String BLUE = "\u001B[34m"; final String GREEN = "\u001B[32m";
         final String YELLOW = "\u001B[33m";
-        // Introduction
-        System.out.println("\n-------------- Higher Lower Game --------------");
         // Variables
         int guess, secret, count = 0;
         char resp = 'y', giveup = 'n';
@@ -18,6 +16,9 @@ public class Ex7 {
         secret = (int)(100.0 * Math.random()) + 1;;
         // While loop if the user wants to play
         while(resp == 'y') {
+            // Introduction
+            System.out.println("\n-------------- Higher Lower Game --------------");
+      
             do{
                 System.out.print("\nWrite a number(1-100): ");
                 guess = sc.nextInt();
@@ -41,7 +42,7 @@ public class Ex7 {
             
             if(giveup == 'n') {
                 // Congrats!!
-                System.out.println(BLUE + "\nCongratss!!You guessed the number" + "\nNumber of tries: " + count + NORMAL);
+                System.out.println(BLUE + "\nCongratss!!You guessed the number!!" + "\nNumber of tries: " + count + NORMAL);
                 // Play again
                 System.out.print(YELLOW + "\nDo u want to play again?(y/n): " + NORMAL);
                 resp = sc.next().charAt(0);
