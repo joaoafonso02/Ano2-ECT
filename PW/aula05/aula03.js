@@ -7,7 +7,7 @@ function calculate() {
     if(document.getElementById("op1").value.length === 0 || document.getElementById("op2").value.length == 0) {
         alert("⚠️ ERROR:Missing operands!!!");
     }
-
+ 
     if(oper == '+')
         res = op1 + op2;
     else if(oper == '-')
