@@ -1,6 +1,5 @@
 package Aula3;
 import java.util.*;
-import Aula2.support;
 
 public class Ex5 {
     public static final String NORMAL = "\033[0m"; final static String RED = "\033[0;31m"; 

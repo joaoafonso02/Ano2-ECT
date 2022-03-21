@@ -1,6 +1,5 @@
 package Aula3;
 import java.util.Scanner;
-import Aula2.support;
 
 public class Ex1 {
     public static void main(String[] args) {

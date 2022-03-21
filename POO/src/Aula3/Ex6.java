@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Ex6 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in); 
-        final String NORMAL = "\033[0m"; final String RED = "\033[0;31m"; final String BLUE = "\u001B[34m"; 
+        final String NORMAL = "\033[0m"; final String BLUE = "\u001B[34m"; 
         
         int[] days = {31,28,31,30,31,30,31,31,30,31,30,31};
 

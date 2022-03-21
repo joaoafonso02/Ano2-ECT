@@ -1,6 +1,5 @@
 package Aula3;
 import java.util.Scanner;
-import Aula2.support;
 
 public class Ex3 {
     public static final String NORMAL = "\033[0m"; final static String RED = "\033[0;31m"; final static String ANSI_PURPLE = "\u001B[36m";; 
