@@ -2,7 +2,7 @@ package Aula3;
 import java.util.*;
 
 public class Ex5 {
-    public static final String NORMAL = "\033[0m"; final static String RED = "\033[0;31m"; 
+    public static final String NORMAL = "\033[0m"; final static String RED = "\033[0;31m"; final static String ANSI_PURPLE = "\u001B[36m";
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
@@ -22,9 +22,8 @@ public class Ex5 {
         // Calculus
         for (int i = 0; i < 13; i++) {
             amount += amount * (tax/100);
-            System.out.printf("\nMonth number " + i + " the amount is %3.2f\n", amount);
+            System.out.printf(ANSI_PURPLE +  "\nMonth number " + i + " the amount is %3.2f €\n" + NORMAL, amount);
         }
-         
         sc.close();
     }
 }

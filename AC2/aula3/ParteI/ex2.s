@@ -22,10 +22,11 @@ main:
 loop:					            #	while(1) {
 	lw	    $t2, PORTB($t1)		    #		$t2 = PORTB
 	andi	$t2, $t2, 0x0001		#		$t2 = RB0
+    xori    $t1, $t1, 0x0001	    #		RB0 = RB0\
 	lw	    $t3, LATE($t1)		    #		$t3 = LATE
 
 	andi	$t3, $t3, 0xFFFE	    #		RE0 = 0
-	move    $t3, $t2	    	    #		RE0 = RB0
+	move    $t3, $t2	    	    #		RE0 = RB0\
 	sw  	$t3, LATE($t1)		
 	j	    loop			
 	li  	$v0, 0			        #	return 0;

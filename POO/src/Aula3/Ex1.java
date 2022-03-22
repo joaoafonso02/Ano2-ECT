@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Ex1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        final String NORMAL = "\033[0m"; final String RED = "\033[0;31m"; final String ANSI_PURPLE = "\u001B[36m";;
+        final String NORMAL = "\033[0m"; final String RED = "\033[0;31m"; final String ANSI_PURPLE = "\u001B[36m";
         double tgrade, pgrade;
         boolean approved = true;
 
