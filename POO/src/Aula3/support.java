@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class support {
     public static final String NORMAL = "\033[0m"; final static String RED = "\033[0;31m"; 
+    // read positive doubles
     public static Double getPositiveDouble(Scanner sc, String text) { 
         double d=0.0;
         do {
@@ -19,7 +20,7 @@ public class support {
 
         return d;
     }
-
+    // read positive ints
     public static int getIntPos(Scanner sc, String text) {
         int d = 0;
         do {
@@ -27,7 +28,7 @@ public class support {
             if(sc.hasNextInt()) {
                 d = sc.nextInt();
                 if(d > 0) break;     
-                System.out.println(RED + "NO NEGATIVE!" + NORMAL); 
+                System.out.println(RED + "IT HAS TO BE POSITIVE!" + NORMAL); 
 			} else {
                 System.out.println("IT HAS TO BE A REAL NUMBER");
                 sc.next();
@@ -36,7 +37,7 @@ public class support {
 
         return d;
     }
-
+    // read grade 0-20
     public static Double getGrade(Scanner sc, String text) { 
         double d = 0;
         do{
@@ -84,8 +85,4 @@ public class support {
 		}
 		return x;
 	}
-
-
-    
-
 }
