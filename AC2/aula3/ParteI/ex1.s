@@ -25,8 +25,9 @@ loop:					            #	while(1) {
 	lw	    $t3, LATE($t1)		    #		$t3 = LATE
 
 	andi	$t3, $t3, 0xFFFE	    #		RE0 = 0
-	move    $t3, $t2	    	    #		RE0 = RB0
+	or      $t3, $t3, $t2	    	    #		RE0 = RB0
 	sw  	$t3, LATE($t1)		
-	j	    loop			
+	j	    loop		
+    	
 	li  	$v0, 0			        #	return 0;
 	jr  	$ra 			

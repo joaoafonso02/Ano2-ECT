@@ -13,11 +13,11 @@
 main:
     lui     $t1, SFR_BASE_HI        # 0xBF88
     lw		$t2, TRISE($t1)		    # READ  (Mem_addr = 0xBF880000 + 0x6100)
-    andi    $t2, $t2, 0xFFFE        # MODIFY (bit0 = 0 - RE0
+    andi    $t2, $t2, 0xFFFE        # MODIFY (bit8 = 0 - RD8
     sw		$t2, TRISE($t1)		    # WRITE (Write TRISE register)
 
     lw      $t2, TRISB($t1)         # READ  (Mem_addr = 0xBF880000 + 0x6040)
-    andi    $t2, $t2, 0x0001        # MODIFY (bit0 = 1 - RE0
+    andi    $t2, $t2, 0x0001        # MODIFY (bit0 = 0 - RE0
     sw	    $t2, TRISB($t1)		    # WRITE TRISB register
 loop:					            #	while(1) {
 	lw	    $t2, PORTB($t1)		    #		$t2 = PORTB
