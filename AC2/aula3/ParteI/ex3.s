@@ -23,7 +23,6 @@ loop:					            #	while(1) {
 	lw	    $t2, PORTB($t1)		    #		$t2 = PORTB
 	andi	$t2, $t2, 0x0001		#		$t2 = RB0
     xori    $t1, $t1, 0x0001	    #		RB0 = RB0\
-    sll     $t3, $t3, 1
     lw	    $t3, LATE($t1)		    # Read LATE register
 
 	andi	$t3, $t3, 0xFFFE	    # Reset bit 1 - RE0 = 0

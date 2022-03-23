@@ -17,7 +17,7 @@ main:
     sw		$t2, TRISE($t1)		    # WRITE (Write TRISE register)
 
     lw      $t2, TRISB($t1)         # READ  (Mem_addr = 0xBF880000 + 0x6040)
-    andi    $t2, $t2, 0x0001        # MODIFY (bit0 = 0 - RE0
+    ori    $t2, $t2, 0x0001        # MODIFY (bit0 = 0 - RE0
     sw	    $t2, TRISB($t1)		    # WRITE TRISB register
 loop:					            #	while(1) {
 	lw	    $t2, PORTB($t1)		    #		$t2 = PORTB
@@ -25,7 +25,7 @@ loop:					            #	while(1) {
 	lw	    $t3, LATE($t1)		    #		$t3 = LATE
 
 	andi	$t3, $t3, 0xFFFE	    #		RE0 = 0
-	or      $t3, $t3, $t2	    	    #		RE0 = RB0
+	or      $t3, $t3, $t2	   	    #		RE0 = RB0
 	sw  	$t3, LATE($t1)		
 	j	    loop		
     	
