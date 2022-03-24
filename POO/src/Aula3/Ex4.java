@@ -5,7 +5,8 @@ public class Ex4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int max = 0, min = 0, sum = 0; 
-        int medium = 0, count = 1;
+        int count = 1;
+        double average = 0;
         int[] array = new int[100];
 
         System.out.println("\nYOUR LIST: ");
@@ -24,12 +25,12 @@ public class Ex4 {
             }
             count++;
             sum += array[i];
-            medium = sum /count;   
+            average = (double)sum /count;    
         }
 
         System.out.println("\nMax: " + max);
         System.out.println("Min: " + min);
-        System.out.println("Medium: " + medium);
+        System.out.printf("Average: %3.1f\n", average);
         System.out.println("Total of numbers: " + count);
 
         sc.close();

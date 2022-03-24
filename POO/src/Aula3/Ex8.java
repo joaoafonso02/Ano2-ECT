@@ -15,7 +15,7 @@ public class Ex8 {
             if(studs[i].tgrade < 7 || studs[i].pgrade < 7) {
                 studs[i].fgrade = 66;
             } else {
-                studs[i].fgrade =(int) Math.round(0.4 * studs[i].tgrade + 0.6 * studs[i].pgrade);
+                studs[i].fgrade = Ex1.FinalGrade(studs[i].tgrade, studs[i].pgrade);
             }
         }
         

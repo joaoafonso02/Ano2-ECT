@@ -37,19 +37,6 @@ public class support {
 
         return d;
     }
-    // read grade 0-20
-    public static Double getGrade(Scanner sc, String text) { 
-        double d = 0;
-        do{
-            System.out.print(text); 
-            d = sc.nextDouble();
-            if(d < 0 || d > 20) {
-                System.out.println(RED + "GRADE NOT BETWEEN 0-20!" + NORMAL);
-            }
-        } while(d < 0 || d > 20);
-
-        return d;
-    }
 
     // read an int [min,max]
 	public static int readIntervalInt(Scanner sc, String text, int min, int max) {
