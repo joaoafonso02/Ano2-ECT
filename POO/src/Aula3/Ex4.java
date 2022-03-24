@@ -4,10 +4,10 @@ import java.util.Scanner;
 public class Ex4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int max = 0, min = 0, sum = 0; 
-        int count = 1;
+        int count = 0;
         double average = 0;
         int[] array = new int[100];
+        int max = Integer.MIN_VALUE, min = Integer.MAX_VALUE, sum = 0; 
 
         System.out.println("\nYOUR LIST: ");
 
@@ -20,13 +20,17 @@ public class Ex4 {
                 max = array[i];
             } else if(array[i] < min) {
                 min = array[i];
-            } else if(array[i] == array[0] && i > 0) {
-                break;
-            }
+            } 
             count++;
             sum += array[i];
-            average = (double)sum /count;    
+            average = (double)sum /count; 
+            
+            if(array[i] == array[0] && i > 0) {
+                break;
+            }
+            
         }
+         
 
         System.out.println("\nMax: " + max);
         System.out.println("Min: " + min);
