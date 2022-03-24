@@ -4,29 +4,34 @@ import java.util.Scanner;
 public class Ex8 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        final String NORMAL = "\033[0m"; final String RED = "\033[0;31m"; final String GREEN = "\u001B[36m";;
-        // variables
-        double[][] CLASS = new double[16][3];
-        // Filling the gaps
-        for (int i = 0; i < CLASS.length; i++) {
-            CLASS[i][0]= (20.0 * Math.random());
+        final String NORMAL = "\033[0m"; final String RED = "\033[0;31m"; final String GREEN = "\u001B[36m";
+        Stud[] studs = new Stud[16];
+        
+        for (int i = 0; i < studs.length; i++) {
+            studs[i] = new Stud();
 
-            CLASS[i][1] = (20.0 * Math.random());
-
-            CLASS[i][2] = (int) Math.round(0.4 * CLASS[i][0] + 0.6 * CLASS[i][1]);
-            if(CLASS[i][2] < 7) {
-                CLASS[i][2] = (int)66;
+            studs[i].tgrade = 20 * Math.random();
+            studs[i].pgrade = 20 * Math.random();
+            if(studs[i].tgrade < 7 || studs[i].pgrade < 7) {
+                studs[i].fgrade = 66;
+            } else {
+                studs[i].fgrade =(int) Math.round(0.4 * studs[i].tgrade + 0.6 * studs[i].pgrade);
             }
         }
-        // Print Grade Table
+        
         System.out.println(GREEN + "NotaT   NotaP   Pauta" + NORMAL);
-        for (int i = 0; i < CLASS.length; ++i) {
-            System.out.printf("%4.1f    %4.1f      %2s", 
-                    CLASS[i][0], 
-                    CLASS[i][1], 
-                    CLASS[i][2] < 9.5 ? RED + String.format("%.0f",CLASS[i][2]) + NORMAL: String.format("%.0f",CLASS[i][2]));
-            System.out.println();
+        for (Stud student : studs) {
+            System.out.printf("%4.1f    %4.1f      %2s\n",
+                student.tgrade, 
+                student.pgrade,
+                student.fgrade == 66 || student.fgrade < 9.5  ? RED + student.fgrade + NORMAL : student.fgrade);
         }
-        sc.close();
+       sc.close();
     }
+}
+
+class Stud {
+    double tgrade;
+    double pgrade;  
+    int fgrade; 
 }
