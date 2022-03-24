@@ -15,10 +15,10 @@ public class Ex5 {
         }while(amount % 1000 != 0);
 
         do{
-            tax = support.getPositiveDouble(sc, "Tax: ")/100;
-            if(tax < 0.05) break;
+            tax = support.getPositiveDouble(sc, "Tax: ");
+            if(tax < 5) break;
             System.out.println(RED + "0% - 5%" + NORMAL);
-        } while(tax > 0.05);
+        } while(tax > 5);
         // Calculus
         for (int i = 0; i < 13; i++) {
             amount += amount * (tax/100);
