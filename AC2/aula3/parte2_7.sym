@@ -1,0 +1,21 @@
+GAS LISTING parte2_7.s 			page 1
+
+
+DEFINED SYMBOLS
+          parte2_7.s:1      *ABS*:000000000000bf88 SFR_BASE_HIGH
+          parte2_7.s:2      *ABS*:0000000000006040 TRISB
+          parte2_7.s:3      *ABS*:0000000000006050 PORTB
+          parte2_7.s:4      *ABS*:0000000000006060 LATB
+          parte2_7.s:5      *ABS*:0000000000006100 TRISE
+          parte2_7.s:6      *ABS*:0000000000006110 PROTE
+          parte2_7.s:7      *ABS*:0000000000006120 LATE
+          parte2_7.s:8      *ABS*:000000000000000b readCoreTimer
+          parte2_7.s:9      *ABS*:000000000000000c resetCoreTimer
+          parte2_7.s:13     .text:0000000000000000 main
+          parte2_7.s:33     .text:0000000000000034 while
+          parte2_7.s:74     .text:00000000000000b0 delay
+          parte2_7.s:55     .text:0000000000000078 endif
+          parte2_7.s:63     .text:0000000000000090 end
+          parte2_7.s:79     .text:00000000000000c0 whiled
+
+NO UNDEFINED SYMBOLS
