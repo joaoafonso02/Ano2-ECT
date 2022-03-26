@@ -51,7 +51,7 @@ public class support {
 			if( x >= min && x <= max )
 				break;
 			else
-				System.out.println(RED + "NOT BETWEEN " + min + " - " + max + "!");
+				System.out.println(RED + "NOT BETWEEN " + min + " - " + max + "!" + NORMAL);
 		}
 		return x;
 	}
