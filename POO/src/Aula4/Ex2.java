@@ -25,7 +25,7 @@ public class Ex2 {
     }
     
     public static int countDigits(String s) {
-		return s.replaceAll("[^0-9]", "").length(); // count the length of numeric chars
+		return s.replaceAll("\\D", "").length(); // count the length of numeric chars
 	}
 
     public static int countSpaces(String s) {
