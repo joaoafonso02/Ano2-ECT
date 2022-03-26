@@ -14,14 +14,14 @@ public class Ex4 {
         System.out.println("\n   " + Months[month-1] + " " + year);
         System.out.println("Su Mo Tu We Th Fr Sa");
 
-        for (int i = 0; i < WeekDay-1 ; i++) {
-            System.out.print("   ");
+        for (int i = 0; i < WeekDay-1; i++) {
+            System.out.print("   ");    // create space depending the WeekDay
         }
 
         for (int i = 1; i <= Days(month, year); i++) {
             System.out.printf("%2d ", i);
-			if( ((WeekDay-1)+i) % 7 == 0 ) {
-				System.out.println();
+			if( ((WeekDay-1)+i) % 7 == 0 ) {    
+				System.out.println();   // next line if > Sa
 			}
         }
         System.out.println("\n");
