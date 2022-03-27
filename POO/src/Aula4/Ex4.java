@@ -15,7 +15,7 @@ public class Ex4 {
         System.out.println("Su Mo Tu We Th Fr Sa");
 
         for (int i = 0; i < WeekDay-1; i++) {
-            System.out.print("   ");    // create space depending the WeekDay
+            System.out.print("   ");    // create space depending on the WeekDay
         }
 
         for (int i = 1; i <= Days(month, year); i++) {
