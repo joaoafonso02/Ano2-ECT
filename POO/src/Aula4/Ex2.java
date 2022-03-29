@@ -25,15 +25,33 @@ public class Ex2 {
     }
     
     public static int countDigits(String s) {
-		return s.replaceAll("\\D", "").length(); // count the length of numeric chars
+        int digits = 0;                                      
+        for (int i = 0; i < s.length(); i++) {               
+         if(Character.isDigit(s.charAt(i))) digits++;     
+        }                                                    
+        return digits;                                       
+		//return s.replaceAll("\\D", "").length(); // count the length of numeric chars
 	}
 
     public static int countSpaces(String s) {
-		return s.replaceAll("[^ ]", "").length(); // count the length of spaces
+        int spaces = 0;                           
+        for (int i = 0; i < s.length(); i++) {    
+            if(s.charAt(i) ==' ') spaces++;       
+        }                                         
+        return spaces;                            
+		//return s.replaceAll("[^ ]", "").length(); // count the length of spaces
 	}
 
     public static boolean onlyLowerCase(String s) {
-		return s.equals(s.toLowerCase()); // returns if is LowerCase or not
+        int up = 0;                                                       
+        for (int i = 0; i < s.length(); i++) {                            
+             if(Character.isUpperCase(s.charAt(i))) up++;            
+        }                                                                 
+        if(up == 0)                                                       
+                return true;                                               
+        else                                                              
+             return false;                                                 
+		//return s.equals(s.toLowerCase()); // returns if is LowerCase or not
 	}
 
 	public static String removeDoubleSpaces(String s) {
