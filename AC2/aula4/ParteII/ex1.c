@@ -6,12 +6,11 @@ int main(void) {
     TRISB = TRISB & 0x80FF;     // RB8 a Rb14 saidas = 0
     TRISD = TRISD & 0xFF9F;     // Configure port as output
 
-    LATDbits.LATD5 = 1;         // RD5 = 1
+    LATDbits.LATD5 = 1;         // RD5 = 1 ativa o segmento da direita
     LATDbits.LATD6 = 0;         // RD6 = 0 
 
     while (1) {
         char c = getChar(); 
-
         switch (c)
         {
             case 'A':
