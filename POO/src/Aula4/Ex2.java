@@ -18,7 +18,7 @@ public class Ex2 {
 		System.out.println("Number of numeric digits: " + countDigits(sentence));
 		System.out.println("Number of spaces: " + countSpaces(sentence));
 		System.out.println("Only Low Case? " + (onlyLowerCase(sentence)));
-		System.out.println("Double spaces: " + removeDoubleSpaces(sentence));
+		System.out.println("Double spaces: " + removeMultipleSpaces(sentence));
 		System.out.println("Palindrome?: " + (isPalindrome(sentence)));
 
         sc.close();
@@ -54,7 +54,7 @@ public class Ex2 {
 		//return s.equals(s.toLowerCase()); // returns if is LowerCase or not
 	}
 
-	public static String removeDoubleSpaces(String s) {
+	public static String removeMultipleSpaces(String s) {
 		return s.replaceAll("[ ]+", " "); 
 	}
 
