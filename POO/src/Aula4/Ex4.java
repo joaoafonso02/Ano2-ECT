@@ -24,7 +24,6 @@ public class Ex4 {
 				System.out.println();   // next line if > Sa
 			}
         }
-        System.out.println("\n");
         sc.close();
     }
     // read an int [min,max]
