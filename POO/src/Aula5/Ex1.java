@@ -23,8 +23,10 @@ public class Ex1 {
                     System.out.println("\nNEW DATE");
                     System.out.print("Day: ");
                     int day = sc.nextInt();
+
                     System.out.print("Month: ");
                     int month = sc.nextInt();
+                    
                     System.out.print("Year: ");
                     int year = sc.nextInt();
                     data = new Data(day, month, year);
