@@ -20,10 +20,11 @@ public class Ex4 {
 
         for (int i = 1; i <= Days(month, year); i++) {
             System.out.printf("%2d ", i);
-			if( ((WeekDay-1)+i) % 7 == 0 ) {    
-				System.out.println();   // next line if > Sa
-			}
+            if(((WeekDay-1)+i) % 7 == 0) {    
+                System.out.println();   // next line if > Sa
+            }
         }
+        System.out.println("\n");
         sc.close();
     }
     // read an int [min,max]
