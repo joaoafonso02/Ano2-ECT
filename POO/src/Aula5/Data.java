@@ -20,18 +20,7 @@ public class Data {
 
     // increment date
     public void increment(int days) {
-        while( days > 0 ) {
-            if(this.day == Days(this.month, this.year)) {
-                this.day = 0;
-                this.month++;
-                if(this.month > 12) {
-                    this.month = 1;
-                    this.year++;
-                }
-            }
-            this.day++;
-            days--;
-        }
+       // still workin on that
     }
 
     // decrement date
