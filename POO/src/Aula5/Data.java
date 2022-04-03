@@ -1,6 +1,5 @@
 package Aula5;
 
-
 public class Data {
     private int day, month, year;  // public or private eis a questão.
     private static final int[] allDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -20,12 +19,38 @@ public class Data {
 
     // increment date
     public void increment(int days) {
-       // still workin on that
+        while( days > 0 ) {
+            if(this.day == Days(this.month, this.year)) {
+                this.day = 1;
+                if(this.month == 12) {
+                    this.month = 1;
+                    this.year++;
+                }
+                else    
+                    this.month++;
+            } else 
+                this.day++;
+            days--;
+        }
     }
 
     // decrement date
     public void decrement(int days) {
-        // NO IDEA
+        while( days > 0 ) {
+			if( this.day == 1 ) {
+				
+				if( this.month == 1 ) {
+					this.month = 12;
+					this.year--; 
+				} else {
+					this.month--;
+				}
+                this.day = Days(this.month, this.year);
+			} else {
+				this.day--;
+			}
+			days--;
+		}
     }
 
     public int day() { return day; } // get day
