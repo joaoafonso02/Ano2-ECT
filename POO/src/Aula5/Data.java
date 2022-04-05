@@ -12,9 +12,13 @@ public class Data {
     // Set values to day, month, year
     public void set(int day, int month, int year) {
         assert validDate(day, month, year): "Data inválida";
-        this.day = day;
-        this.month = month;
-        this.year = year;
+        if(validDate(day, month, year)) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        } else {
+            System.out.println("\nInvalid Date!");
+        }
     }
 
     // increment date
