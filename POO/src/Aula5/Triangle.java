@@ -9,9 +9,11 @@ public class Triangle {
 
     public void set(double side1, double side2, double side3) {
         assert side1 > 0 && side2 > 0 && side3 > 0: "Invalid Measures for a triangle";
+        assert (side1 < (side2 + side3) && (side2 < (side1 + side3) && side3 < (side1 + side2))): "WRONG";
         this.side1 = side1;
         this.side2 = side2;
         this.side3 = side3;
+        
     }
 
     public double getSide1() { return side1;} // get side1
