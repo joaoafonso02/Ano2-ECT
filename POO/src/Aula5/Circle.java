@@ -21,12 +21,12 @@ public class Circle {
         return "This is a Circle that has a radius of " + this.radius;
     }
 
-    public double Area(double radius) {
-        return Math.PI * this.radius * this.radius;
+    public double Area() {
+        return Math.PI * getRadius() * getRadius();
     }
 
-    public double Perimeter(double radius) {
-        return 2 * Math.PI * this.radius;
+    public double Perimeter() {
+        return 2 * Math.PI * getRadius();
     }
 
     public boolean equals(Circle c1) {
