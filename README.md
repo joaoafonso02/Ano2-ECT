@@ -7,7 +7,7 @@ Everything I did in My Second Year as a Computer and Telematics Engineering Stud
 - Mecânica e Campo Eletromagnético (MCE)
 - Competências Transferíveis I (DT, ENN, TCA)
  
-# 1st Semester
+# 2nd Semester
 - Redes de Comunicações II (RC2)
 - Arquitetura de Computadores II (AC2)
 - Sinais e Sistemas Eletrónicos (SSE)
