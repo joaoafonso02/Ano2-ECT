@@ -1,13 +1,11 @@
-void delay(int ms);
+void delay(unsigned int ms);
 
-int main(void)
-{
+int main(void) {
+
     int cnt1 = 0;
     int cnt5 = 0;
     int cnt10 = 0;
-
-    while (1)
-    {
+    while(1) {
         delay(100);
 
         putChar('\r');
@@ -29,11 +27,8 @@ int main(void)
     return 0;
 }
 
-void delay(int ms)
-{
-    for(; ms > 0; ms--)
-    {
-        resetCoreTimer();
-        while(readCoreTimer() < 20000);
-    }
-} 
+
+void delay(unsigned int ms){
+   resetCoreTimer();
+   while(readCoreTimer() < 20000);
+}
