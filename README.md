@@ -8,8 +8,8 @@ Everything I did in My Second Year as a Computer and Telematics Engineering Stud
 - Competências Transferíveis I (DT, ENN, TCA)
  
 # 2nd Semester
-- Redes de Comunicações II (RC2)
-- Arquitetura de Computadores II (AC2)
-- Sinais e Sistemas Eletrónicos (SSE)
 - Análise de Sistemas (AS)
+- Redes de Comunicações II (RC2)
+- Sinais e Sistemas Eletrónicos (SSE)
+- Arquitetura de Computadores II (AC2)
 - Competências Transferíveis II (PW, IHC, FAI3D)
