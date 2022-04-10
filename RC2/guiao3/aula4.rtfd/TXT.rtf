@@ -27,12 +27,21 @@ RIP Version 1 (RIPv1) is a classfull protocol. Does not announces (sub-)networks
 
 \f0\b 1.4 / 1.5 )	
 \f1\b0 Ao contr\'e1rio do RIPv1, \'e9 poss\'edvel ver nas routing tables(show ip route) dos routers que j\'e1 n\'e3o aparecem IP\'92s todos com a mesma m\'e1scara(/24), agora ja aperecem as m\'e1scaras devidas /25,\'85 40/45 segundos periocidade.\
-show ip route(Router 2){{\NeXTGraphic Screenshot 2022-04-06 at 15.01.47.png \width13200 \height5520 \appleattachmentpadding0 \appleembedtype0 \appleaqc
-}¬}\
+show ip route(Router 2)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2022-04-06 at 15.01.47.png \width13200 \height5520 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+Wireshark(Router 2)\
 \
-Wireshark(Router 2){{\NeXTGraphic Screenshot 2022-04-06 at 15.03.13.png \width16240 \height12200 \appleattachmentpadding0 \appleembedtype0 \appleaqc
-}¬}\
-\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2022-04-06 at 15.03.13.png \width16240 \height12200 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
 \
 Como podemos ver no terminal, contando os IP\'92s obtidos pelo RIPv2(5) \'e9 superior ao n\'ba que se v\'ea no Wireshark acima apresentado(3). Como 3 < 5, existe efetivamente, a presen\'e7a de split-horizon.\
 \
@@ -45,8 +54,10 @@ Como podemos ver no terminal, contando os IP\'92s obtidos pelo RIPv2(5) \'e9 sup
 \f1\b0 Quando o split-horizon n\'e3o existe, aparecem todas as redes.\
 
 \f0\b \
-\
-\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
 \
 \
 \
