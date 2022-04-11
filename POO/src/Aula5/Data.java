@@ -1,4 +1,9 @@
 package Aula5;
+// private numDays
+// MUDAR A CLASSE Data (nº de dias 1/01/2000)
+// Data(1, 1, 2000) {
+//  numDias = 367
+// funct q dá o numero de dias de um ano
 
 public class Data {
     private int day, month, year;  // public or private eis a questão.
