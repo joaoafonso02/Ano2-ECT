@@ -1,0 +1,41 @@
+Guiao 3
+
+R = 4.7K -> amarelo rouxo vermelho 
+R = 10K  -> castanho preto laranja
+R = 6.8K -> azul cinzento vermelho
+
+3.1
+a)	V1 = 3,22 V
+
+b)	teorema sobreposição - usar uma fonte de cada vez
+
+		--> curto circuito da fonte vs1:
+			- 10 000 // 47000 (ohms) => 1/Req = 1/10 000 + 1/4700 => Req = 3197 (ohms)
+			
+			- Lei das malhas: -10 + Req*i1 + 6800*i1 = 0 => i1 = 0.001 A (corrente q passa em v1)
+		
+		--> curto circuito da fonte vs2:
+			- 4700 // 6800 (ohms) => 1/Req = 1/4700 + 1/6800 => Req = 2779 (ohms)
+			
+			- Lei das malhas: -10 + 10 000*i2 + Req*i2 = 0 => i2 = 0.782*10^-3 A (corrente q passa em v1)
+
+		--> iTotal = i2 - i1 = -0.218mA
+		--> v1 = 4700*(-0.218*10^-3) = -1.0246 V
+
+
+
+3.2
+
+	R = 2.2k -> vermelho vermelho vermelho
+	R = 470  -> castanho roxo amarelo
+	R = 220  -> castanho vermelho vermelho
+	R = 670  -> castanho cinzento azul
+	R = 1K   -> vermelho preto laranja
+
+
+a)	R = 470 -> U = 5,09 V -> I = 10,83 mA
+	R = 680 -> U = 1,48 V -> I = 2,18 mA
+
+
+b) 	
+	
