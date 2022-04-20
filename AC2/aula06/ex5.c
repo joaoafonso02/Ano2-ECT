@@ -1,6 +1,7 @@
 #include <detpic32.h>
 
 int main(void) {
+    int ns = 4;
     TRISBbits.TRISB4 = 1;       // RB4 digital output disconnected 
     AD1PCFGbits.PCFG4 = 0;      // RB4 configured as analog input (AN4)
     AD1CON1bits.SSRC = 7;       // Conversion trigger selection bits: in this 
@@ -10,7 +11,7 @@ int main(void) {
                                 // interrupt is generated. At the same time 
                                 // hardware clears the ASAM bit
     AD1CON3bits.SAMC = 16;      // Sample time is 16 TAD (TAD = 100 ns)
-    AD1CON2bits.SMPI = 1-1;
+    AD1CON2bits.SMPI = ns-1;
     
     AD1CHSbits.CH0SA = 4;
     AD1CON1bits.ON = 1;         // Enable A/D converter
@@ -19,10 +20,19 @@ int main(void) {
     while(1) {
         AD1CON1bits.ASAM = 1; // Start conversion
         while (IFS1bits.AD1IF == 0);// Wait while conversion not done (AD1IF == 0)
-        printInt(ADC1BUF0, 16 | 3 << 16);// Read conversion result (ADC1BUF0 value) and print it 
-        printStr('\n')
+        int *p = (int *)(&ADC1BUF0);
+        int i, 
+        double media = 0;
+        printf('\r')
+        for( i = 0; i < 16; i++ ) {
+            printInt( p[i*4]
+            media += p[i*4];
+            printStr(' ')
+        }
+
+        media /= ns;
+        printf("Volts: %d", (media*33+511)/1023);
         IFS1bits.AD1IF = 0; // Reset AD1IF          
     }
-
     return 0;
 }
