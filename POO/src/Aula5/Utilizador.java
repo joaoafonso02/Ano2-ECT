@@ -1,7 +1,5 @@
 package Aula5;
 
-import java.util.ArrayList;
-
 public class Utilizador {
     private String nome;
     private int nMec;
