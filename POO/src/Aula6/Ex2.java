@@ -19,11 +19,11 @@ public class Ex2 {
         System.out.println("c1 contém 6?: " + ((c1.contains(6) ? "sim" : "não")));
         System.out.println("c2 contém 6?:" + ((c2.contains(6) ? "sim" : "não")));
         
-        System.out.println("União:" + c1.unir(c2));
-        System.out.println("Interseção:" + c1.interset(c2));
-        System.out.println("Diferença:" + c1.subtrair(c2));
+        System.out.println("União:" + c1.join(c2));
+        System.out.println("Interseção:" + c1.intersect(c2));
+        System.out.println("Diferença:" + c1.subtract(c2));
         
-        c1.empty();
+        c1.empty(); //c1 = new Conjunto();
         System.out.println("c1:" + c1);
     }
 }

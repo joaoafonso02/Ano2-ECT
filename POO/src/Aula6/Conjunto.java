@@ -32,6 +32,38 @@ public class Conjunto {
         }
     }
 
+    public void empty() {
+        for (int i = 0; i < this.size; i++) {
+            this.arr[i] = 0;
+        }
+    }
+
+    public int elementAt(int i) {
+        assert this.size > i;
+        return this.arr[i];
+    }
+
+    public Conjunto join(Conjunto add) {
+        Conjunto c = new Conjunto();
+        for (int i = 0; i < add.size(); i++) {
+            c.insert(add.elementAt(i));
+        }
+        return c;
+    }
+
+    public Conjunto subtract(Conjunto dif) {
+        Conjunto c = new Conjunto();
+        for (int i = 0; i < dif.size(); i++) {
+            c.remove(dif.elementAt(i));
+        }
+        return c;
+    }
+
+    public Conjunto intersect(Conjunto inter) {
+        Conjunto c = new Conjunto();
+        return c;
+    }
+
     public int size() {return this.size;}
 
 }
