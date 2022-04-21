@@ -1,4 +1,5 @@
 package Aula6;
+import java.time.LocalDate;
 
 public class Aluno extends Pessoa{
     private static int it = 100;
@@ -8,6 +9,8 @@ public class Aluno extends Pessoa{
     public Aluno(String nome, int cc, Date dataNasc) {
         super(nome, cc, dataNasc);
         this.nMec = it++;
+        LocalDate currentDate = LocalDate.now(); 
+        this.inscDate = new Date(currentDate.getDayOfMonth(),currentDate.getMonthValue(), currentDate.getYear() );
    }
 
     public Aluno(String nome, int cc, Date dataNasc, Date inscDate) {

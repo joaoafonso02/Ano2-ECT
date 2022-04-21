@@ -11,7 +11,7 @@ public class ex1 {
         
         System.out.println("Aluno:"+ al.getName());
         System.out.println(al);
-        System.out.println("Bolseiro:"+ bls.getName() + ", NMec: " + bls.getNMec() + ", Monthly Amount:" +  bls.getmontlyAmount());
+        System.out.println("Bolseiro:"+ bls.getName() + ", NMec: " + bls.getNMec() + ", Monthly Amount:" +  bls.getmonthlyAmount());
         System.out.println(bls);
     }
 }

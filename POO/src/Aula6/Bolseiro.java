@@ -12,7 +12,7 @@ public class Bolseiro extends Aluno{
         this.montlhyAmount = montlhyAmount;
     }
 
-    public int getmontlyAmount() {return this.montlhyAmount;}
+    public int getmonthlyAmount() {return this.montlhyAmount;}
 
     @Override
     public String toString() {
