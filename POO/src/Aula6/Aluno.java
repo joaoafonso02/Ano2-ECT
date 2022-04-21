@@ -8,8 +8,7 @@ public class Aluno extends Pessoa{
     public Aluno(String nome, int cc, Date dataNasc) {
         super(nome, cc, dataNasc);
         this.nMec = it++;
-        this.inscDate = new Date(1, 1, 1); // ?????????
-    }
+   }
 
     public Aluno(String nome, int cc, Date dataNasc, Date inscDate) {
         super(nome, cc, dataNasc);
