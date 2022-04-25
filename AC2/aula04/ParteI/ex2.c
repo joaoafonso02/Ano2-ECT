@@ -1,24 +1,23 @@
 #include <detpic32.h>
 
-void delay(int ms);
+void delay(int ms)
 
 int main(void) {
-    LATE = LATE & 0xFFF0;		// 0 as the output
-    TRISE = TRISE & 0xFFF0;     // Configure port as output
-    int count = 0
+    LATE = (LATE & 0xFFF0);  // reset
+    TRISE = (TRISE & 0xFFF0); // portos RE0 a RE3 outputs
 
-    while (1) {
-        LATE = (LATE & 0xFFF0) | count; 
-        delay(250)              // 1/4hz = 250ms
-        count = (count+1) & 0x000F; // ou count = (count + 1) % 16;
-        // if(count > 15) {
-        //    count = 0
-        // }
+    int counter = 0
+
+    while(1){
+        delay(250); // Wait 0.5s
+        counter = (counter+1) & 0x000F;
     }
-    return 0;
+return 0;
 }
 
-void delay(int ms) {
+//Funcao delay
+void delay(int ms){
     resetCoreTimer();
-    while(readCoreTimer() < 20000 * ms);
+    while(readCoreTimer()<20000 * ms);
 }
+

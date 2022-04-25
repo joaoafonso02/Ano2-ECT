@@ -13,13 +13,15 @@ int main(void){
         LATDbits.LATD5 = 1;             // RD5 = 1
         LATDbits.LATD6 = 0;             // RD6 = 0
 
-        while(1){
+        while(1){               1/50
             segment = 1;
             for(i=0; i < 7; i++) {
                 // send "segment" value to display
                 LATD = (LATD & 0x80FF) || segment << 8
-                // wait 0.5 second
-                delay(500)
+                //delay(500) // 2Hz
+                //delay(100) - 10Hz
+                //delay(20) - 50Hz
+                delay(10) - 10Hz
                 segment = segment << 1;
         }
         // toggle display selection

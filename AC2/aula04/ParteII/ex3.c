@@ -10,8 +10,7 @@ int main(void){
         TRISD = (TRISD & 0xFF9F);       // - RB5 e RB6 outputs
         TRISB = (TRISB & 0x80FF);       // - RB8 a RB14 outputs
         // configuring display
-        LATDbits.LATD5 = 1;             // RD5 = 1
-        LATDbits.LATD6 = 0;             // RD6 = 0
+        LATD = (LATD | 0x0040)            // 0000 0000 0100 0000 
 
         while(1){
             segment = 1;
@@ -23,8 +22,7 @@ int main(void){
                 segment = segment << 1;
         }
         // toggle display selection
-        LATDbits.LATD5 =!LATDbits.LATD5
-        LATDbits.LATD6 =!LATDbits.LATD6 
+        LATD = LATD ^ 0x0060;   
         }
 return 0; }
 
