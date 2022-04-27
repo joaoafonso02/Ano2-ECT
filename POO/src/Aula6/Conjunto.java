@@ -45,6 +45,9 @@ public class Conjunto {
 
     public Conjunto join(Conjunto add) {
         Conjunto c = new Conjunto();
+        for (int i = 0; i < this.size; i++) {
+            c.insert(this.arr[i]);
+        }
         for (int i = 0; i < add.size(); i++) {
             c.insert(add.elementAt(i));
         }
@@ -53,6 +56,9 @@ public class Conjunto {
 
     public Conjunto subtract(Conjunto dif) {
         Conjunto c = new Conjunto();
+        for (int i = 0; i < this.size; i++) {
+            c.insert(this.arr[i]);
+        }
         for (int i = 0; i < dif.size(); i++) {
             c.remove(dif.elementAt(i));
         }
