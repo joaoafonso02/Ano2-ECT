@@ -1,0 +1,22 @@
+2^16 -1 = 65535 -> Valor maximo do registo de 16bits
+PBCLK= 40Mhz / 2 = 20Mhz -> freq inicial do CPU
+
+--------------------------Timer 3(B)--------------------------
+k_prescaler = 20 000 000 / (65535+25) * fout(neste caso 25Hz) ) = 305(aproximado -- impossivel)
+   
+Prescaler 1:256
+
+Fout = 20Mhz / (64 * (x + 1)) = 25Hz
+PR3 = x = 12499
+
+--------------------------------------------------------------
+
+--------------------------Timer 1(A)--------------------------
+
+k_prescaler = 20 000 000 / (65535+5) * fout(neste caso 5Hz) ) = 61 (aproximado é 64)
+   
+Prescaler 1:64
+
+Fout = 20Mhz / (64 * (x + 1)) = 5Hz
+PR1 = x = 62499
+ 
