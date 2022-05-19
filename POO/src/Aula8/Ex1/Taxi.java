@@ -3,7 +3,7 @@ package Aula8.Ex1;
 public class Taxi extends Automovel{
     private int license_number;
 
-    Taxi(String matricula, String marca, String modelo, int potencia, int no_do_quadro, float capacidade_bagageira, int license_number) {
+    Taxi(String matricula, String marca, String modelo, int potencia, int no_do_quadro, int license_number) {
         super(matricula, marca, modelo, potencia, no_do_quadro);
         this.setLicenseNumber(license_number);
     }
