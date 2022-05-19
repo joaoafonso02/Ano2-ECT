@@ -2,7 +2,8 @@ package Aula8.Ex1;
 
 public abstract class Veiculo implements KmPercorridosInterface {
     private String matricula, modelo, marca;
-    private int potencia, km_percorridos, ultimo_trajeto, id;
+    private int potencia, ultimo_trajeto, id;
+    private int ultimoTrajeto, distanciaTotal;
     private static int id_counter = 1;
 
     public Veiculo(String matricula, String marca, String modelo, int potencia) {
@@ -14,9 +15,17 @@ public abstract class Veiculo implements KmPercorridosInterface {
     }
 
     // get args 
-    public int distanciaTotal() { return this.km_percorridos;}
-
+    @Override
+    public int distanciaTotal() { return this.distanciaTotal;}
+    
+    @Override
     public int ultimoTrajeto() {return ultimo_trajeto;}
+
+    @Override
+    public void trajeto(int km) {
+        this.ultimoTrajeto = km;
+        this.distanciaTotal += this.ultimoTrajeto;
+    }
 
     protected void setId() {this.id = id_counter++;}
 
@@ -50,4 +59,5 @@ public abstract class Veiculo implements KmPercorridosInterface {
         if (potencia <= 0) throw new IllegalArgumentException("INVALID CAR POWER! ( > 0 )");
         this.potencia = potencia;
     }
+
 }
