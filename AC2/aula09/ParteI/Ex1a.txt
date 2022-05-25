@@ -2,18 +2,20 @@
 PBCLK= 40Mhz / 2 = 20Mhz -> freq inicial do CPU
 
 --------------------------Timer 3(B)--------------------------
-k_prescaler = 20 000 000 / (65535+1) * fout(neste caso 25Hz) ) = 305(aproximado -- impossivel)
-   
-Prescaler 1:256
+Fout = PBCLK / (65535+1) = 20MHz / (65535+1) = 305,175Hz
+K = 305,175 / 100Hz = 3,057
 
-Fout = 20Mhz / (64 * (x + 1)) = 25Hz
-PR3 = x = 12499
+Prescaler 1:4
+=> Fout_presc = 20MHz / 4 = 5000000Hz
 
+
+PR3 = (5000000 / 100) - 1 = 49999 (dentro dos 16bits)
+Fout = 20Mhz / 4(49999+1) = 100Hz
 --------------------------------------------------------------
 
 --------------------------Timer 1(A)--------------------------
 
-k_prescaler = 20 000 000 / (65535+1) * fout(neste caso 5Hz) ) = 61 (aproximado é 64)
+k_prescaler = 20 000 000 / (65535+5) * fout(neste caso 5Hz) ) = 61 (aproximado é 64)
    
 Prescaler 1:64
 
