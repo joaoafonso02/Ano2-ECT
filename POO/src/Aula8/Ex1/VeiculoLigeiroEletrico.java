@@ -13,5 +13,11 @@ public class VeiculoLigeiroEletrico implements VeiculoEletrico{
         // TODO Auto-generated method stub
         
     }
+
+    @Override
+    public void descarregar(int num) {
+        // TODO Auto-generated method stub
+        
+    }
     
 }
