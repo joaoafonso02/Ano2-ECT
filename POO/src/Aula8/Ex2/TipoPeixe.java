@@ -1,4 +1,4 @@
-package aula08.exec2;
+package Aula8.Ex2;
 
 public enum TipoPeixe {
     FRESCO, CONGELADO;

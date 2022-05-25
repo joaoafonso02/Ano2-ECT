@@ -33,8 +33,8 @@ public class EmpresaAluguer {
         this.email = email;
     }
 
-    public void addVeiculo(Veiculo veiculo) {
-        veiculos.add(veiculo);
+    public void addVeiculo(VeiculoLigeiroEletrico eletrico1) {
+        veiculos.addAll((Collection<? extends Veiculo>) eletrico1);
     }
 
     public void removeVeiculo(Veiculo veiculo) {
