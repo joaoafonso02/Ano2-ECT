@@ -5,12 +5,12 @@ package Aula5;
 //  numDias = 367
 // funct q dá o numero de dias de um ano
 
-public class Data {
+public class Data implements Comparable{
     private int day, month, year;  // public or private eis a questão.
     private static final int[] allDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     
     // Constructor
-    Data(int day, int month, int year) {
+    public Data(int day, int month, int year) {
         this.set(day, month, year);
     }
 
@@ -92,6 +92,18 @@ public class Data {
     // return true/false if it's a leapyear/not
     public static boolean leapYear(int year) {
         return (year % 400 == 0) || ( (year % 4 == 0) && (year % 100 != 0) );
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Data date = (Data) o;
+        if (this.year() < date.year) return -1;
+		else if (this.year() > date.year()) return 1;
+		if (this.month() < date.month()) return -1;
+		else if (this.month() > date.month()) return 1;
+		if (this.day() < date.day()) return -1;
+		else if (this.day() > date.day()) return 1;
+        return 0;
     }
 }
 
