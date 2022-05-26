@@ -7,8 +7,15 @@ public class Ex2 {
         int DIM = 5000;
 
         Collection<Integer> col= new ArrayList<>();
+        Collection<Integer> col2= new LinkedList<>();
+        Collection<Integer> col3= new HashSet<>();
+        Collection<Integer> col4= new TreeSet<>();
         checkPerformance(col, DIM);
+
+        System.out.printf("Collection    1000    5000    10000    20000    40000    100000\n");
+
     }
+
     
     private static void checkPerformance(Collection<Integer> col, int DIM) {
         double start, stop, delta;
@@ -43,5 +50,5 @@ public class Ex2 {
         delta= (stop - start) / 1e6; // convert nanoseconds to milliseconds
         
         System.out.println(col.size() + ": Remove from "+ col.getClass().getSimpleName() +" took "+ delta+ "ms");
-        }
+    }
 }

@@ -32,6 +32,7 @@ public class Pessoa {
         if(!(obj instanceof Pessoa)) {
             return false;
         }
+
         Pessoa b = (Pessoa) obj;
         if(this.cc == b.cc & this.dataNasc.equals(b.dataNasc) && this.nome.equals(b.nome))
             return true;
@@ -40,11 +41,9 @@ public class Pessoa {
 
     @Override
     public int hashCode(){
-        int a = this.nome.hashCode() * 98;
+        int a = this.nome.hashCode();
         a += this.cc;
-        a /= 13;
         a += this.dataNasc.hashCode();
-        a *= 17;
 
         return a;
     }
