@@ -95,8 +95,8 @@ public class Data implements Comparable{
     }
 
     @Override
-    public int compareTo(Object o) {
-        Data date = (Data) o;
+    public int compareTo(Object obj) {
+        Data date = (Data) obj;
         if (this.year() < date.year) return -1;
 		else if (this.year() > date.year()) return 1;
 		if (this.month() < date.month()) return -1;
@@ -104,6 +104,32 @@ public class Data implements Comparable{
 		if (this.day() < date.day()) return -1;
 		else if (this.day() > date.day()) return 1;
         return 0;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj)
+            return true;
+        if(obj == null)
+            return false;
+        if(!(obj instanceof Data))
+            return false;
+        Data b = (Data) obj;
+        if(this.day == b.day && this.month == b.month && this.year == b.year)
+            return true;
+        return false;
+    }
+
+    @Override
+    public int hashCode(){
+        int a = this.day * 7;
+        a += 76;
+        a += this.month;
+        a /= 5;
+        a += this.year;
+        a *= 84;
+
+        return a;
     }
 }
 

@@ -37,7 +37,7 @@ public class Ex1 {
         // new colection(c3)
         Set<Pessoa> c3 = new HashSet<>();
         c3.add(new Pessoa("Aníbal", 43121876, new Data(1, 5, 2001)));
-        c3.add(new Pessoa("Peixoto", 32755498, new Data(30, 5, 2002)));
+        c3.add(new Pessoa("Joaquim", 21746413, new Data(28, 6, 2002)));
         c3.add(new Pessoa("Joaquim", 21746413, new Data(28, 6, 2002)));
         c3.add(new Pessoa("Luu", 74367471, new Data(13, 8, 2002)));
         c3.add(new Pessoa("Gertrudes", 16535638, new Data(20, 9, 1970)));
