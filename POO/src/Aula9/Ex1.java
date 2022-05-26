@@ -36,22 +36,22 @@ public class Ex1 {
 
         // new colection(c3)
         Set<Pessoa> c3 = new HashSet<>();
-        c3.add(new Pessoa("Aníbal", 43121876, new Data(1, 10, 2001)));
-        c3.add(new Pessoa("Peixoto", 32755498, new Data(7, 5, 2002)));
-        c3.add(new Pessoa("Joaquim", 21746413, new Data(30, 6, 2002)));
-        c3.add(new Pessoa("Luu", 74367471, new Data(21, 8, 2002)));
-        c3.add(new Pessoa("Gertrudes", 16535638, new Data(14, 1, 2002)));
+        c3.add(new Pessoa("Aníbal", 43121876, new Data(1, 5, 2001)));
+        c3.add(new Pessoa("Peixoto", 32755498, new Data(30, 5, 2002)));
+        c3.add(new Pessoa("Joaquim", 21746413, new Data(28, 6, 2002)));
+        c3.add(new Pessoa("Luu", 74367471, new Data(13, 8, 2002)));
+        c3.add(new Pessoa("Gertrudes", 16535638, new Data(20, 9, 1970)));
         
         for(Pessoa p : c3) {
             System.out.println(p);
         }
         // new colection(c4)
         Set<Data> c4 = new TreeSet<>();
-        c4.add(new Data(2, 11, 2002));
-        c4.add(new Data(7, 5, 2002));
-        c4.add(new Data(30, 6, 2002));
-        c4.add(new Data(21, 8, 2002));
-        c4.add(new Data(14, 1, 2002));
+        c4.add(new Data(10, 12, 2004));
+        c4.add(new Data(30, 5, 2002));
+        c4.add(new Data(20, 11, 2003));
+        c4.add(new Data(21, 11, 2002));
+        c4.add(new Data(1, 1, 1));
         
         for(Data p : c4) {
             System.out.println(p);
