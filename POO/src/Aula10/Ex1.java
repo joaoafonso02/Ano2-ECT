@@ -30,8 +30,11 @@ public class Ex1 {
         // Diferent way to search and print
         System.out.println();
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            System.out.println(entry.getKey() + " --> " + entry.getValue() + " :)");
+            System.out.println(entry.getKey() + " --> " + entry.getValue());
         }
+
+        // ToString
+        System.out.printf("\nmapa.toString() >>>\n%s\n", map.toString());
 
       
     }
