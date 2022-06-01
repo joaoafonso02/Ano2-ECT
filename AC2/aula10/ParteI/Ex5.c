@@ -4,7 +4,7 @@ void delay(int ms);
 void putc(char byte);
 
 int main(void) {
-    // Configure UART2:
+    // Configure UART2: (115200, N, 8, 1)
     U2BRG = 10;      // U2BRG = (20MHz / (16 * 115200)) – 1  = 10
     // 2 – Configure number of data bits, parity and number of stop bits --> procurar por parity
     U2MODEbits.PDSEL = 0;       // no parity
@@ -17,7 +17,8 @@ int main(void) {
     U2MODEbits.ON = 1;          // Enable UART2
 
     while(1) {
-        putc('+');
+        char c = getc();        // Read character using getc()
+        putc(c);
         delay(1000);// wait 1 s
     }
     return 0; 

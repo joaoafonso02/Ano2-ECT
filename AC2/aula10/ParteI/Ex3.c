@@ -2,9 +2,10 @@
 
 void delay(int ms);
 void putc(char byte);
+void putstr(char *str);
 
 int main(void) {
-    // Configure UART2:
+    // Configure UART2 (115200, N, 8, 1) 
     U2BRG = 10;      // U2BRG = (20MHz / (16 * 115200)) – 1  = 10
     // 2 – Configure number of data bits, parity and number of stop bits --> procurar por parity
     U2MODEbits.PDSEL = 0;       // no parity
@@ -17,7 +18,7 @@ int main(void) {
     U2MODEbits.ON = 1;          // Enable UART2
 
     while(1) {
-        putc('+');
+        putstr("String de teste\n");
         delay(1000);// wait 1 s
     }
     return 0; 
@@ -33,3 +34,10 @@ void delay(int ms) {
     resetCoreTimer();
     while(readCoreTimer() < 20000 * ms);
 }
+
+void putstr(char *str) {
+    while(*str != '\0') { // use putc() function to send each charater ('\0' should not be sent)
+        putc(*str);
+        str++;
+    }
+} 

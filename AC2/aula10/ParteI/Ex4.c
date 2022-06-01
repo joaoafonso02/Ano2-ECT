@@ -4,8 +4,8 @@ void delay(int ms);
 void putc(char byte);
 
 int main(void) {
-    // Configure UART2:
-    U2BRG = 10;      // U2BRG = (20MHz / (16 * 115200)) – 1  = 10
+    // Configure UART2: 600,N,8,1
+    U2BRG = 2082;       // U2BRG = (20MHz / (16 * 600)) – 1  = 10
     // 2 – Configure number of data bits, parity and number of stop bits --> procurar por parity
     U2MODEbits.PDSEL = 0;       // no parity
     U2MODEbits.STSEL = 0;       // only 1 stop bit
@@ -16,6 +16,7 @@ int main(void) {
     // 4 – Enable UART2 (see register U2MODE)
     U2MODEbits.ON = 1;          // Enable UART2
 
+    // COMPILAR COM COMANDO: pterm 600,N,8,1
     while(1) {
         putc('+');
         delay(1000);// wait 1 s
