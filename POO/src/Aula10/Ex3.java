@@ -17,8 +17,8 @@ public class Ex3 {
             if(!map.containsKey(c)) {
                 map.put(c, new ArrayList<>());
             }
-            map.get(c).add(i);
-            i++;
+            map.get(c).add(i++);
+
         }
         return map.toString();
     }

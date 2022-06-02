@@ -3,12 +3,12 @@ package Aula10;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class Ex2 {
     public static void main(String[] args) {      
-        Map<String, HashSet<String>> map = new HashMap<>();
+        Map<String, HashSet<String>> map = new TreeMap<>();
 
-        //
         HashSet<String> cor = new HashSet<>();
         cor.add("Que tem a cor da neve");
         cor.add("Descorado, pálido");
@@ -19,7 +19,7 @@ public class Ex2 {
         UA.add("departamentos");
         UA.add("cantinas");
         UA.add("alunos");
-        map.put("Universidade", UA);
+        map.put("universidade", UA);
 
         HashSet<String> q = new HashSet<>();
         q.add("secretária");
