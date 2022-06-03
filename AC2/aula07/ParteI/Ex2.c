@@ -94,7 +94,7 @@ void send2displays(char value)
     
     if (displayFlag == 0)
     {
-        LATD = (LATD | 0x0040) & 0xFFDF;    // Dipslay High active and Display Low OFF
+        LATD = (LATD | 0x0040) & 0xFFDF;    // Display High active and Display Low OFF
         LATB = (LATB & 0x80FF) | ((unsigned int)(dh)) << 8; // Clean the display and set the right value
     } else {
         LATD = (LATD | 0x0020) & 0xFFBF;    // Display High OFF and Display High active
