@@ -5,7 +5,6 @@
 // T2CONbits.TCKPS = 5 ------> divisão por 32 1:32 prescaler em DECIMAL 
 // ver manual PIC32MX Family Reference Manual Timers pág.10
 
-
 int main(void) {
     // Configure Timer T3 (2 Hz with interrupts disabled)
     

@@ -24,7 +24,7 @@ int main(void)
     EnableInterrupts();
 
     AD1CON1bits.ASAM = 1;       // Start conversion
-    x
+
     while (1) { }
        
     return 0;

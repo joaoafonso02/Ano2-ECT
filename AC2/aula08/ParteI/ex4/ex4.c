@@ -1,44 +1,40 @@
 #include <detpic32.h>
 
 int main(void) {
-    // Configure Timers T1 and T3 with interrupts enabled) 
-    
-    T1CONbits.TCKPS = 7;    // 1:32 prescaler Fout_presc = 625000;
-    PR1 = 62499;            // Fout = 20Mhz / 32(62499 + 1) = 10Hz
-    TMR3 = 0;               // Reset timer T3 count register
-    T1CONbits.TON = 1;      // Enable timer T3   
+    // T3 
+    T3CONbits.TCKPS = 5; // 20 000 000 / (65535+1)*25 = 1:32 prescaler
+    PR3 = 24999; // 20 000 000 / (32*(x+1)) = 25
+    TMR3 = 0; 
+    T3CONbits.TON = 1; 
+ 
+    IPC3bits.T3IP = 2; // Interrupt priority (must be in range [1..6])
+    IEC0bits.T3IE = 1; // Enable timer T3 interrupts
+    IFS0bits.T3IF = 0; // Reset timer T3 interrupt flag
 
-    T3CONbits.TCKPS = 6;    // 1:256 prescaler Fout_presc = 78125;
-    PR3 = 12499;            // Fout = 20Mhz / 256(39062 + 1) = 1,9999Hz
-    TMR1 = 0;               // Reset timer T1 count register
-    T3CONbits.TON = 1;      // Enable timer T1 
+    // T1
+    T3CONbits.TCKPS = 6; // 20 000 000 / (65535+1)*5 --> 1:64 
+    PR3 = 62499;
+    TMR3 = 0; 
+    T3CONbits.TON = 1; 
+ 
+    IPC1bits.T1IP = 3; // Interrupt priority (must be in range [1..6])
+    IEC0bits.T1IE = 1; // Enable timer T1 interrupts
+    IFS0bits.T1IF = 0; // Reset timer T1 interrupt flag
 
-    IPC3bits.T3IP = 2;      // Interrupt priority 2
-    IEC0bits.T3IE = 1;      // Enable timer T3 interrupts
-    IFS0bits.T3IF = 0;      // Reset timer T3 interrupt flag
-    
-    IPC1bits.T1IP = 1;      // Interrupt priority 1
-    IEC0bits.T1IE = 1;      // Enable timer T1 interrupts
-    IFS0bits.T1IF = 0;      // Reset timer T1 interrupt flag
-    
-    EnableInterrupts(); // Global Interrupt Enable 
-    
+
+    EnableInterrupts();
+
     while(1);
 
-    return 0; 
-}
-
-void _int_(4) isr_T1(void) {
-    // print character '1'
-    putChar('1');
-    // Reset T1IF flag
-    IFS0bits.T1IF = 0;
-}
+    return 0;
+} 
 
 void _int_(12) isr_T3(void) {
-    // print character '3'
     putChar('3');
-    // Reset T3IF flag
-    IFS0bits.T3IF = 0;
-}
+    IFS0bits.T3IF = 0; 
+} 
 
+void _int_(4) isr_T1(void) {
+    putChar('1');
+    IFS0bits.T3IF = 0; 
+} 
