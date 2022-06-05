@@ -10,7 +10,7 @@ int main(void) {
     
     //k_prescaler = 20 000 000 / (65535+1) * fout(neste caso 2Hz) ) = 152 (aproximando ao mais alto é 256)
     T3CONbits.TCKPS = 7; // 1:k_prescaler;  fout_presc = 78125 = 20 000 000 / 256;
-    PR3 = 39063;  // Fout = 20Mhz / (256 * (39063 + 1)) = 1,999Hz          
+    PR3 = 39061;  // Fout = 20Mhz / (256 * (39063 + 1)) = 1,999Hz          
     TMR3 = 0;  // Reset timer T3 count register
     T3CONbits.TON = 1;  // Enable timer T3   
     while(1) {
