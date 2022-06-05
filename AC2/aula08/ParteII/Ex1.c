@@ -3,19 +3,21 @@
 void delay(int ms);
 
 int main(void) {
-    TRISEbits.TRISE0 = 1;   // RE0 out
-    TRISEbits.TRISE8 = 0; // RD8 input
+    TRISEbits.TRISE0 = 0;
+    TRISDbits.TRISD8 = 1;
 
-    while(1) {
-        if(PORTDbits.PORTD8 == 1) {
-            LATEbits.LATE0 = 1;
-            delay(3000);
-            LATEbits.LATE0 = 0;
-        }
+    while (1) {
+        while (PORTDbits.RD8 == 1);
+        LATEbits.LATE0 = 1; 
+        delay(3000);
+        LATEbits.LATE0 = 0; 
     }
+    return 0;
 }
 
 void delay(int ms) {
     resetCoreTimer();
     while(readCoreTimer() < 20000*ms);
 }
+
+
