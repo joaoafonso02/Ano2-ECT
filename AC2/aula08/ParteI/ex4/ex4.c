@@ -2,8 +2,8 @@
 
 int main(void) {
     // T3 
-    T3CONbits.TCKPS = 5; // 20 000 000 / (65535+1)*25 = 1:32 prescaler
-    PR3 = 24999; // 20 000 000 / (32*(x+1)) = 25
+    T3CONbits.TCKPS = 4; // 20 000 000 / (65535+1)*25 = 1:16 prescaler
+    PR3 = 49999; // 20 000 000 / (32*(x+1)) = 25
     TMR3 = 0; 
     T3CONbits.TON = 1; 
  
