@@ -6,7 +6,7 @@ import java.util.*;
 public class Ex1 {
     public static void main(String[] args) throws IOException {
         Map<String, TreeMap<String, Integer>> map = new TreeMap<>();
-        ArrayList<String> arr = new ArrayList<>();
+        ArrayList<String> list = new ArrayList<>();
 
         try{
             Scanner input = new Scanner(new File("./src/Aula11/major.txt"), "UTF-8");
@@ -15,25 +15,25 @@ public class Ex1 {
 
                 s = s.replaceAll("[^a-zA-Z0-9]", " ");
                 if(s.matches("\\w{3,}")){
-                    arr.add(s);
+                    list.add(s);
                 }
             }
-            for(int j = 1; j < arr.size(); j++){
+            for(int j = 1; j < list.size(); j++){
                 int i = j - 1;
-                if(map.containsKey(arr.get(i))){
-                    TreeMap<String, Integer> b = map.get(arr.get(i));
-                    if(b.containsKey(arr.get(j))){
-                        int c = b.get(arr.get(j));
+                if(map.containsKey(list.get(i))){
+                    TreeMap<String, Integer> b = map.get(list.get(i));
+                    if(b.containsKey(list.get(j))){
+                        int c = b.get(list.get(j));
                         //c++;
-                        b.put(arr.get(j), ++c);
+                        b.put(list.get(j), ++c);
                     }else{
-                        b.put(arr.get(j), 1);
+                        b.put(list.get(j), 1);
                     }
-                    map.put(arr.get(i), b);
+                    map.put(list.get(i), b);
                 }else{
                     TreeMap<String, Integer> b = new TreeMap<>();
-                    b.put(arr.get(j), 1);
-                    map.put(arr.get(i), b);
+                    b.put(list.get(j), 1);
+                    map.put(list.get(i), b);
                 }
             }
             System.out.println(map);            
