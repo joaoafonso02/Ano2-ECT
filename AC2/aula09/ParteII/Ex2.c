@@ -15,7 +15,7 @@ int main(void) {
     // OC1
     OC1CONbits.OCM = 6; // PWM mode on OCx; fault pin disabled
     OC1CONbits.OCTSEL =0;   // Use timer T3 as the time base for PWM generation
-    OC1RS = void setPWM(25);  // Ton constant
+    OC1RS = 12500;  // Ton constant
     OC1CONbits.ON = 1;  // Enable OC1 module 
 
     EnableInterrupts();
