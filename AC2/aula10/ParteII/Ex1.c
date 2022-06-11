@@ -2,10 +2,9 @@
 
 void delay(int ms);
 void putc(char byte);
-char getc(void)
 
 int main(void) {
-    // Configure UART2: (115200, N, 8, 1)
+    // Configure UART2:
     U2BRG = 10;      // U2BRG = (20MHz / (16 * 115200)) – 1  = 10
     // 2 – Configure number of data bits, parity and number of stop bits --> procurar por parity
     U2MODEbits.PDSEL = 0;       // no parity
@@ -18,14 +17,13 @@ int main(void) {
     U2MODEbits.ON = 1;          // Enable UART2
 
     while(1) {
-        char c = getc();        // Read character using getc()
-        putc(c);
-        delay(1000);// wait 1 s
+        putc(0x5A);
+        delay(10); // wait 1 s osciloscopio OC4
     }
     return 0; 
 } 
 
-void putc(char byte) {
+void putc1(char byte) {
     while(U2STAbits.UTXBF == 1);// wait while UART2 UTXBF == 1
     // Copy "byte" to the U2TXREG register
     U2TXREG = byte;
@@ -34,10 +32,4 @@ void putc(char byte) {
 void delay(int ms) {
     resetCoreTimer();
     while(readCoreTimer() < 20000 * ms);
-}
-
-char getc(void) {
-    while (U2STAbits.URXDA == 0);
-    return U2RXREG;
-    // Return U2RXREG
 }
