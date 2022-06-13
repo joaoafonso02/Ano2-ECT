@@ -44,7 +44,7 @@ void _int_(4) isr_timer_1(void) {
 
 void _int_(8) isr_timer_2(void) {
     static char flag = 0;
-    flag = flag^1
+    flag = flag^1;
     LATDbits.LATD5 = flag;
     LATDbits.LATD6 = flag^1;
 
