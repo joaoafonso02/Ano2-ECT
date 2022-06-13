@@ -52,6 +52,13 @@ void _int_(32) isr_uart2(void) {
     }
 } 
 
+void putString(char *str) {
+    int i = 0;
+    while(*str != '\n') {
+        putc(*str++)
+    }
+}
+
 void putc(char byte) {
     while(U2STAbits.UTXBF == 1);// wait while UART2 UTXBF == 1
     // Copy "byte" to the U2TXREG register
