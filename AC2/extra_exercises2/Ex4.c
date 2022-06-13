@@ -3,6 +3,30 @@
 volatile int dutyCicle = 10;
 int round_div(int a,int b) { return (a + b / 2) / b; }
 
+void send2displays(unsigned char value) { 
+    static const char display7Scodes[] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x67,0x77,0x7C,0x39,0x5E,0x79,0x71};
+    
+    static char flag = 0;
+
+    if(value == 100) {
+        LATB |= 0x0000;
+        LATDbits.LAD14 = 1;
+    } else {
+        if(flag == 0){
+            LATDbits.LATD5 = 1;
+            LATDbits.LATD6 = 0;
+            LATB = (LATB & 0x80FF) | ((display7Scodes[value % 10]) << 8);
+        }else{
+            LATDbits.LATD5 = 0;
+            LATDbits.LATD6 = 1;
+            LATB = (LATB & 0x80FF) | ((display7Scodes[value / 10]) << 8);
+        }
+        LATDbits.LAD14 = 0;
+    }
+
+    flag = flag ^ 1;
+}
+
 int main(void) {
     // T1 - 1kHz
     T1CONbits.TON = 0;
@@ -70,30 +94,11 @@ void _int_(27) isr_adc(void) {
     val /= 8;
     dutyCicle = (val*100 + 511) / 1023;
     OC3RS = ((PR1 + 1) * dutyCicle + 50) / 100;
-    OC5RS = ((PR1 + 1) * (100 - dutyCicle) + 50) / 100; // valor máximo da conversão A/D deve corresponder o duty-cycle 0%
-                                                        // e ao valor mínimo deve corresponder o duty-cycle 100%. 
 
     IFS1bits.AD1IF = 0;
 }
 
 void _int_(20) isr_timer_5(void) {
-    static const char display7Scodes[] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x67,0x77,0x7C,0x39,0x5E,0x79,0x71};
-    static int flag = 0;
-    flag = flag^1;
-    LATDbits.LATD5 = flag;
-    LATDbits.LATD6 = flag^1;
-
-    if(dutyCicle == 100) {
-        LATB |= 0x0000;
-        LATDbits.LATD = 1;
-    } else {
-        if(flag == 0) {
-            LATB = (LATB & 0x80FF) | display7Scodes[dutyCicle / 10] << 8;
-        } else{
-            LATB = (LATB & 0x80FF) | display7Scodes[dutyCicle % 10] << 8;
-        }
-        LATDbits.LATD = 0;
-    }
-
+    send2displays(dutyCicle);
     IFS0bits.T5IF = 0; // limpar pedido de interrupção do temporizador x
 }
