@@ -3,6 +3,23 @@
 int round_div(int a,int b) { return (a + b / 2) / b; }
 static const char display7Scodes[] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x67,0x77,0x7C,0x39,0x5E,0x79,0x71};
 
+void send2displays(unsigned char value) {
+    static const char display7Scodes[] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x67,0x77,0x7C,0x39,0x5E,0x79,0x71};
+    static char flag = 0;
+
+    if(flag == 0) {
+        LATDbits.LATD5 = 1;
+        LATDbits.LATD6 = 0;
+        LATB = (LATB & 0x80FF) | display7Scodes[value % 10] << 8;
+    } else {
+        LATDbits.LATD5 = 0;
+        LATDbits.LATD6 = 1;
+        LATB = (LATB & 0x80FF) | display7Scodes[value / 10] << 8;
+    }
+
+    flag = flag^1;
+}
+
 volatile int counter = 0;
 int main(void) {
     // PORTS Configuration
@@ -43,16 +60,6 @@ void _int_(4) isr_timer_1(void) {
 }
 
 void _int_(8) isr_timer_2(void) {
-    static char flag = 0;
-    flag = flag^1;
-    LATDbits.LATD5 = flag;
-    LATDbits.LATD6 = flag^1;
-
-    if( flag==0 ) {
-        LATB = (LATB & 0x80FF) | display7Scodes[counter / 10] << 8; 
-    } else {
-        LATB = (LATB & 0x80FF) | display7Scodes[counter % 10] << 8;
-    }
-
-    IFS0bits.T2IF = 0; // reset
+    send2displays(counter);
+    IFS0bits.T2IF = 0;
 }
