@@ -32,7 +32,7 @@ int main(void) {
     T1CONbits.TON = 0;
     T1CONbits.TCKPS = 0;  // 0,3 --> 1:1 --> 0000
     PR1 = round_div(20000000, (1000 * 1)) - 1;
-    TMRx = 0;
+    TMR1 = 0;
     IPC1bits.T1IP = 1; // prioridade da interrupção (1 a 6)
     IFS0bits.T1IF = 0; // limpar pedido de interrupção do temporizador x
     IEC0bits.T1IE = 1; // ativar pedidos de interrupção do temporizador x
@@ -88,7 +88,7 @@ void _int_(4) isr_timer_1(void) {
 void _int_(27) isr_adc(void) {
     while( IFS1bits.AD1IF == 0 );
     int val = 4, i;
-    for( i = 0; i < 8, i++) {
+    for( i = 0; i < 8; i++) {
         val += (&ADC1BUF0)[4 * i];
     }
     val /= 8;
