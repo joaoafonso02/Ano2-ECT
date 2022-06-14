@@ -6,8 +6,7 @@ void putc(char byte2send){
 } 
 
 void putString(char *str) {
-    int i = 0;
-    while(*str != '\n') {
+    while(*str != '\0') {
         putc(*str++)
     }
 }
