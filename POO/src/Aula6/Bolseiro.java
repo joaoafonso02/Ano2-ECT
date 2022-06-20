@@ -19,4 +19,3 @@ public class Bolseiro extends Aluno{
         return String.format("%s; Monthly Amount: %d", super.toString(), this.montlhyAmount);
     }
 }
-
