@@ -2,6 +2,6 @@ package something;
 
 import java.util.Collection;
 
-public interface PontosDeInteresse<E> {
+public interface PontosDeInteresse {
   Collection<String> locais();
 }

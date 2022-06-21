@@ -1,6 +1,6 @@
 package something;
 
-public abstract class Atividade<E> implements PontosDeInteresse{
+public abstract class Atividade implements PontosDeInteresse{
   protected int n = 0;
   protected String nome = "";
 

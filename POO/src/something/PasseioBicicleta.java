@@ -10,6 +10,7 @@ public class PasseioBicicleta extends Atividade {
         super(numero, nome);
         this.locais = new LinkedHashSet<>();
     }
+
     public PasseioBicicleta(int numero, String nome, String[] locais) {
         super(numero, nome);
         this.locais = new LinkedHashSet<>();
@@ -17,21 +18,21 @@ public class PasseioBicicleta extends Atividade {
             this.locais.add(local);
         }
     }
-  
-  public void addLocal(String local) {
-    this.locais.add(local);
-  }
 
-  public Set<String> locais() {
-      Set<String> returnList = new LinkedHashSet<>();
-      for (String local : locais) {
-          returnList.add(local);
-      }
-      return returnList;
-  }
+    public void addLocal(String local) {
+        this.locais.add(local);
+    }
 
-  @Override
+    public Set<String> locais() {
+        Set<String> returnList = new LinkedHashSet<>();
+        for (String local : locais) {
+            returnList.add(local);
+        }
+        return returnList;
+    }
+
+    @Override
     public String toString() {
-       return super.toString();
+        return super.toString();
     }
 }
