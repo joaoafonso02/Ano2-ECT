@@ -1,4 +1,4 @@
-package something;
+package Aula11.something;
 
 public abstract class Atividade implements PontosDeInteresse{
   protected int n = 0;

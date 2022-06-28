@@ -1,4 +1,4 @@
-package something;
+package Aula11.something;
 
 public class Restaurante {
   private String nome;

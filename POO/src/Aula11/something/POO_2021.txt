@@ -7,15 +7,15 @@ RESTAURANTES DE Sabores Gostosos: [Carvao em Brasa, Super Marios, Camarao Selvag
 PASSEIOS DE VISITAS A Arquitetura Antiga: [Igreja Velha, Aqueduto]
 PASSEIOS DE VISITAS A Bares: [Copos e Conversas, Canequinhas]
 AGENCIA: Agencia Turistica Abaixo as Calorias
-	Atividades: [Atividade [num=102, nome=Sabores Gostosos], Atividade [num=100, nome=A Volta do Churrasco], Atividade [num=201, nome=Arquitetura Antiga], Atividade [num=202, nome=Bares]]
+	Atividades: [Atividade [num=201, nome=Arquitetura Antiga], Atividade [num=102, nome=Sabores Gostosos], Atividade [num=100, nome=A Volta do Churrasco], Atividade [num=202, nome=Bares]]
 TOTAL DE LOCAIS A VISITAR: 11
 
 Alínea 2) ----------------------------------
 
 AGENCIA: Agencia Turistica Tours4Eating
-	Atividades: [Atividade [num=10, nome=FingerFoodPlaces], Atividade [num=11, nome=Pescarias], Atividade [num=12, nome=SnackBars]]
+	Atividades: [Atividade [num=10, nome=FingerFoodPlaces], Atividade [num=12, nome=SnackBars], Atividade [num=11, nome=Pescarias]]
 Atividade [num=10, nome=FingerFoodPlaces]
-Atividade [num=11, nome=Pescarias]
 Atividade [num=12, nome=SnackBars]
+Atividade [num=11, nome=Pescarias]
 -- LISTA DE LUGARES DA AGENCIA --
 
