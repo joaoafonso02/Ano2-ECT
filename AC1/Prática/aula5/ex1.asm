@@ -30,11 +30,11 @@ for:
 	
 	la $t1, lista			# $t1 = lista
 	
-	sw $v0, 0($t1)
-	
 	sll $t2, $t0, 2
 	addu $t2, $t2, $t1		# lista + SIZE
 
+	sw $v0, 0($t2)
+	
 	addi $t0, $t0, 1		# i++
 	j for
 	
