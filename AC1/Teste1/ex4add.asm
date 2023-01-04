@@ -16,7 +16,7 @@ main:
 	la $t1, Z
 	la $t4, T
 	subu $t2, $t1, $t0
-	addu $2, $t1, $t2
+	addu $t2, $t1, $t2
 loop:
 	lw $t3, 0($t0)
 	srl $t3, $t3, 8

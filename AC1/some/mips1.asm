@@ -1,13 +1,20 @@
+# Mapa de registos
+# val: $t0
+# n: $t1
+# min: $t2
+# max: $t3
+
 	.data
 str:
-	.asciiz "Digite ate 20 nos (0 para terminar): "
+	.asciiz "Digite ate 20 inteiros (zero para terminar)"
 str1:
-	.asciiz "Máximo/min são: "
+	.asciiz "Máximo/min sao: "
+	
 	.text
 	.globl main
 	
 main:
-	li $t1, 0 
+	li $t1, 0
 	li $t2, 0x7FFFFFFF
 	li $t3, 0x80000000
 	
@@ -21,18 +28,17 @@ do:
 if:
 	beqz $t0, endif
 if2:
-	ble $t0, $t3, else
-	move $t3, $t0
+	ble $t0, $t3, if3
+	move $t3, $t0	
 	j endif
-else:
+if3:
 	bge $t0, $t2, endif
 	move $t2, $t0
 endif:
 	addi $t1, $t1, 1
 while:
-	bge $t1, 20, endw
-	beqz $t0, endw
-	j do
+	bge $t1, 20, do
+	bnez $t0, do
 endw:
 	la $a0, str1
 	li $v0, 4
@@ -50,4 +56,4 @@ endw:
 	li $v0, 1
 	syscall
 	
-	jr $ra
+	
